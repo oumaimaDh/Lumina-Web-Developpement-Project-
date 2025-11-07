@@ -1,0 +1,840 @@
+
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina - Département Emploi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Light Theme - Snowy Twilight Palette */
+            --bg: #D3D3DF;
+            --text: #575D7F;
+            --card-bg: #ffffff;
+            --border: #E3CED1;
+            --primary: #7B8AB6;
+            --secondary: #A09EBB;
+            --accent: #575D7F;
+            --gradient: linear-gradient(135deg, #7B8AB6, #A09EBB);
+            --navbar-bg: rgba(255, 255, 255, 0.95);
+            --footer-bg: #575D7F;
+            --form-bg: #ffffff;
+            --shadow: rgba(0, 0, 0, 0.05);
+            --btn-outline-color: #7B8AB6;
+        }
+
+        [data-theme="dark"] {
+            /* Dark Theme */
+            --bg: #2c3e50;
+            --text: #f0f0f0;
+            --card-bg: #34495e;
+            --border: #444;
+            --primary: #7B8AB6;
+            --secondary: #A09EBB;
+            --accent: #575D7F;
+            --gradient: linear-gradient(135deg, #7B8AB6, #A09EBB);
+            --navbar-bg: rgba(30, 30, 50, 0.9);
+            --footer-bg: #16213e;
+            --form-bg: #252536;
+            --shadow: rgba(0, 0, 0, 0.2);
+            --btn-outline-color: #7B8AB6;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--navbar-bg);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            padding: 1rem 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 800;
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .logo i {
+            margin-right: 10px;
+            font-size: 2rem;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin: 0 1.5rem;
+            position: relative;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 500;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links a i {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--gradient);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .theme-toggle {
+            background: none;
+            border: none;
+            font-size: 1.4rem;
+            color: var(--text);
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: background 0.3s;
+        }
+
+        .theme-toggle:hover {
+            background: var(--border);
+        }
+
+        .btn {
+            padding: 0.7rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .blank-section {
+    padding: 10rem 2rem;
+    background: var(--bg);
+    text-align: center;
+}
+
+.section-placeholder {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section-placeholder h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    color: var(--text);
+    margin-bottom: 1.5rem;
+}
+
+.section-placeholder p {
+    font-size: 1.2rem;
+    color: #888;
+}
+
+.service-emploi {
+    background: var(--bg);
+}
+
+        .btn-primary {
+            background: var(--gradient);
+            color: white;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--btn-outline-color);
+            color: var(--btn-outline-color);
+        }
+
+        .btn i {
+            margin-right: 8px;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Hero */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 0 2rem;
+            background: var(--gradient);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.1" d="M0,160L48,176C96,192,192,224,288,213.3C384,203,480,149,576,138.7C672,128,768,160,864,170.7C960,181,1056,171,1152,149.3C1248,128,1344,96,1392,80L1440,64L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            background-size: cover;
+            background-position: bottom;
+        }
+
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-right: 2rem;
+        }
+
+        .hero-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .floating-card {
+            width: 300px;
+            height: 400px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            transform-style: preserve-3d;
+            transition: transform 0.8s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .floating-card.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-front, .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .card-front {
+            color: var(--text);
+        }
+
+        .card-back {
+            background: var(--secondary);
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        .card-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .card-text {
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Sections */
+        .features, .process, .forms {
+            padding: 8rem 2rem;
+            background: var(--bg);
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #aaa;
+            max-width: 700px;
+            margin: 0 auto 4rem;
+            line-height: 1.6;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px var(--shadow);
+            transition: all 0.3s;
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 2rem;
+            color: white;
+        }
+
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--text);
+        }
+
+        .feature-text {
+            color: #aaa;
+            line-height: 1.6;
+        }
+
+        .process {
+            background: var(--bg);
+        }
+
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 4rem auto 0;
+            position: relative;
+        }
+
+        .process-steps::before {
+            content: '';
+            position: absolute;
+            top: 40px;
+            left: 10%;
+            width: 80%;
+            height: 3px;
+            background: var(--gradient);
+            z-index: 1;
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            flex: 1;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: var(--card-bg);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            border: 3px solid var(--primary);
+            box-shadow: 0 5px 15px var(--shadow);
+        }
+
+        .forms-container {
+            display: flex;
+            gap: 3rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .form-section {
+            flex: 1;
+            background: var(--form-bg);
+            border-radius: 15px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 30px var(--shadow);
+            border: 1px solid var(--border);
+        }
+
+        .form-title {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 2rem;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+        }
+
+        .form-label {
+            color: var(--text);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            background: var(--card-bg);
+            color: var(--text);
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(123, 138, 182, 0.2);
+        }
+
+        .form-select {
+            appearance: none;
+            background-image: url("image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 15px center;
+            background-size: 16px;
+        }
+
+        .form-submit {
+            width: 100%;
+            padding: 1rem;
+            background: var(--gradient);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 1rem;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--footer-bg);
+            color: white;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .footer-links a {
+            color: #bbb;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 3rem auto 0;
+            padding-top: 2rem;
+            border-top: 1px solid #444;
+            text-align: center;
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .hero-content { flex-direction: column; text-align: center; }
+            .hero-text { padding-right: 0; margin-bottom: 3rem; }
+            .forms-container { flex-direction: column; }
+            .process-steps { flex-direction: column; gap: 3rem; }
+            .process-steps::before { display: none; }
+        }
+
+        @media (max-width: 768px) {
+            .navbar { padding: 1rem; }
+            .nav-links { display: none; }
+            .hero-title { font-size: 2.5rem; }
+            .section-title { font-size: 2rem; }
+        }
+
+        /* Animations */
+        .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .delay-1 { transition-delay: 0.2s; }
+        .delay-2 { transition-delay: 0.4s; }
+        .delay-3 { transition-delay: 0.6s; }
+    </style>
+</head>
+<body>
+   <!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">
+        <i class="fas fa-lightbulb"></i>
+        <span>Lumina</span>
+    </div>
+    <ul class="nav-links">
+        <li><a href="#accueil"><i class="fas fa-home"></i> Accueil</a></li>
+        <li><a href="#departement-social"><i class="fas fa-hands-helping"></i> Département Social</a></li>
+        <li><a href="#evenements"><i class="fas fa-calendar-alt"></i> Événements</a></li>
+        <li><a href="#service-emploi"><i class="fas fa-briefcase"></i> Service de l'Emploi</a></li>
+    </ul>
+    <div class="nav-actions">
+        <button class="theme-toggle" id="theme-toggle">
+            <i class="fas fa-sun"></i>
+        </button>
+        <button class="btn btn-outline"><i class="fas fa-sign-in-alt"></i> Connexion</button>
+        <button class="btn btn-primary"><i class="fas fa-user-plus"></i> Inscription</button>
+    </div>
+</nav>
+
+<!-- ACCUEIL: Blank Placeholder -->
+<section id="accueil" class="blank-section">
+    <div class="section-placeholder">
+        <h2>Accueil</h2>
+        <p>Cette section sera bientôt disponible.</p>
+    </div>
+</section>
+
+<!-- DÉPARTEMENT SOCIAL: Blank -->
+<section id="departement-social" class="blank-section">
+    <div class="section-placeholder">
+        <h2>Département Social</h2>
+        <p>Cette section sera bientôt disponible.</p>
+    </div>
+</section>
+
+<!-- ÉVÉNEMENTS: Blank -->
+<section id="evenements" class="blank-section">
+    <div class="section-placeholder">
+        <h2>Événements</h2>
+        <p>Cette section sera bientôt disponible.</p>
+    </div>
+</section>
+
+<!-- SERVICE DE L'EMPLOI: Contains ALL employment content (including former "Accueil" hero) -->
+<section id="service-emploi" class="service-emploi">
+
+    <!-- Former "Accueil" Hero Content — now inside Service de l'Emploi -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title fade-in">Trouvez l'emploi de vos rêves en Tunisie</h1>
+                <p class="hero-subtitle fade-in delay-1">Lumina révolutionne la recherche d'emploi avec un système intelligent et sécurisé qui connecte les talents aux entreprises sérieuses.</p>
+                <div class="hero-buttons fade-in delay-2">
+                    <a href="#espaces" class="btn btn-primary"><i class="fas fa-briefcase"></i> Voir les offres</a>
+                    <a href="publish-offer.html" class="btn btn-outline" style="color: white; border-color: white;"><i class="fas fa-building"></i> Publier une offre</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="floating-card" id="flip-card">
+                    <div class="card-front">
+                        <div class="card-icon"><i class="fas fa-user-graduate"></i></div>
+                        <h3 class="card-title">Pour les chercheurs d'emploi</h3>
+                        <p class="card-text">Notre algorithme de matching avancé analyse vos compétences, expériences et aspirations...</p>
+                    </div>
+                    <div class="card-back">
+                        <div class="card-icon"><i class="fas fa-building"></i></div>
+                        <h3 class="card-title">Pour les entreprises</h3>
+                        <p class="card-text">Publiez vos offres après validation rigoureuse...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+       
+
+    <section class="features" id="features">
+        <h2 class="section-title fade-in">Fonctionnalités principales</h2>
+        <p class="section-subtitle fade-in delay-1">Découvrez comment Lumina transforme l'expérience de recrutement en Tunisie</p>
+        <div class="features-grid">
+            <div class="feature-card fade-in">
+                <div class="feature-icon"><i class="fas fa-brain"></i></div>
+                <h3 class="feature-title">Matching Algorithmique</h3>
+                <p class="feature-text">Notre algorithme analyse en profondeur les compétences, expériences et aspirations pour proposer les offres les plus pertinentes.</p>
+            </div>
+            <div class="feature-card fade-in delay-1">
+                <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3 class="feature-title">Validation Rigoureuse</h3>
+                <p class="feature-text">Toutes les offres d'emploi sont vérifiées et validées par nos administrateurs pour éliminer tout risque d'arnaques.</p>
+            </div>
+            <div class="feature-card fade-in delay-2">
+                <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                <h3 class="feature-title">Suivi Détaillé</h3>
+                <p class="feature-text">Suivez chaque candidature avec des statuts détaillés : postulé, consulté, entretien, accepté.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="process" id="process">
+        <h2 class="section-title fade-in">Comment ça marche</h2>
+        <p class="section-subtitle fade-in delay-1">Un processus simplifié pour connecter les talents aux opportunités</p>
+        <div class="process-steps">
+            <div class="step fade-in">
+                <div class="step-number">1</div>
+                <h3 class="step-title">Inscription</h3>
+                <p class="step-text">Créez votre profil en tant que chercheur d'emploi ou entreprise avec vérification des informations.</p>
+            </div>
+            <div class="step fade-in delay-1">
+                <div class="step-number">2</div>
+                <h3 class="step-title">Matching</h3>
+                <p class="step-text">Notre algorithme analyse et fait correspondre les profils avec les offres les plus pertinentes.</p>
+            </div>
+            <div class="step fade-in delay-2">
+                <div class="step-number">3</div>
+                <h3 class="step-title">Validation</h3>
+                <p class="step-text">Les offres d'emploi sont validées par nos administrateurs pour garantir leur authenticité.</p>
+            </div>
+            <div class="step fade-in delay-3">
+                <div class="step-number">4</div>
+                <h3 class="step-title">Recrutement</h3>
+                <p class="step-text">Les entreprises et candidats se connectent dans un cadre transparent et efficace.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Espaces (Updated Forms) -->
+    <section class="forms" id="espaces">
+        <h2 class="section-title fade-in">Rejoignez Lumina</h2>
+        <p class="section-subtitle fade-in delay-1">Créez votre compte dès aujourd'hui</p>
+       
+
+            <!-- Espace Candidat (with your exact fields) -->
+            <div class="form-section fade-in delay-1">
+                <h3 class="form-title"><i class="fas fa-user-graduate"></i> Espace Candidats</h3>
+                <div class="form-group">
+                    <label class="form-label" for="candidate-name"><i class="fas fa-user"></i> Nom complet</label>
+                    <input type="text" id="candidate-name" class="form-input" placeholder="Votre nom et prénom" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="candidate-email"><i class="fas fa-envelope"></i> Email</label>
+                    <input type="email" id="candidate-email" class="form-input" placeholder="votre@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="candidate-phone"><i class="fas fa-mobile-alt"></i> Téléphone</label>
+                    <input type="tel" id="candidate-phone" class="form-input" placeholder="+216 XX XXX XXX" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="candidate-profession"><i class="fas fa-briefcase"></i> Profession / Poste visé</label>
+                    <input type="text" id="candidate-profession" class="form-input" placeholder="Développeur, Comptable..." required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="desired-salary"><i class="fas fa-money-bill-wave"></i> Salaire souhaité (DT/mois)</label>
+                    <input type="number" id="desired-salary" class="form-input" placeholder="Ex: 1800" min="0" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="preferred-location"><i class="fas fa-map-pin"></i> Localisation préférée</label>
+                    <input type="text" id="preferred-location" class="form-input" placeholder="Tunis, Sfax, Remote..." required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="skills"><i class="fas fa-laptop-code"></i> Compétences</label>
+                    <textarea id="skills" class="form-input form-textarea" placeholder="JavaScript, React, Communication..." rows="3" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="experience"><i class="fas fa-graduation-cap"></i> Expérience professionnelle</label>
+                    <textarea id="experience" class="form-input form-textarea" placeholder="Décrivez brièvement votre parcours..." rows="4" required></textarea>
+                </div>
+                <button class="form-submit">Créer un compte candidat</button>
+            </div>
+        </div>
+    </section>
+
+</section>
+
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Lumina</h3>
+                <p>Plateforme innovante de solidarité nationale en Tunisie, connectant efficacement les citoyens avec les ressources dont ils ont besoin.</p>
+            </div>
+            
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Tunis, Tunisia</a></li>
+                    <li><a href="mailto:contact@lumina.tn"><i class="fas fa-envelope"></i> contact@lumina.tn</a></li>
+                    <li><a href="tel:+21670123456"><i class="fas fa-phone"></i> +216 70 123 456</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Réseaux sociaux</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Lumina - Plateforme de Solidarité Nationale Tunisienne. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', savedTheme);
+        themeToggle.innerHTML = savedTheme === 'dark' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+
+        themeToggle.addEventListener('click', () => {
+            const current = html.getAttribute('data-theme');
+            const newTheme = current === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeToggle.innerHTML = newTheme === 'dark' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+        });
+
+        // Scroll effects
+        window.addEventListener('scroll', () => {
+            document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Card flip
+        const flipCard = document.getElementById('flip-card');
+        setInterval(() => flipCard.classList.toggle('flipped'), 5000);
+
+        // Fade-in on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+
+        fadeElements.forEach(el => observer.observe(el));
+    </script>
+
+    
+</body>
+</html>
