@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="admin.css">
+    <title>Admin Profile</title>
+</head>
+<body>
+
+     <!-- Toggle Button (this should always show) -->
+  <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <a href="homepage.html">Home</a>
+    <a href="Manage.html">Users</a>
+    <a href="Charts.html">Reports</a>
+
+    <!-- Dropdown -->
+    <div class="dropdown">
+        <a class="dropdown-btn">Departments </a>
+        <div class="dropdown-container">
+            <a href="Requests.html">Associations</a>
+            <a href="#">Jobs</a>
+            <a href="#">Events</a>
+            <a href="#">Reviews & Complaints</a>
+        </div>
+    </div>
+
+    <a href="Admin.html">Profile Settings</a>
+</div>
+
+
+    
+    <h1>Admin Profile</h1>
+
+    <form>
+        <label>Username: </label>
+        <input type="text" value="Admin123"><br><br>
+
+        <label>Email: </label>
+        <input type="email" value="admin@example.com"><br><br>
+
+        <label>Password: </label>
+        <input type="password" value="password"><br><br>
+
+        <button type="submit">Update Profile</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>

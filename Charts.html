@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Chart Page</title>
+    <!-- Include Chart.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <!-- Toggle Button (this should always show) -->
+  <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+
+ 
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <a href="homepage.html">Home</a>
+    <a href="Manage.html">Users</a>
+    <a href="Charts.html">Reports</a>
+
+    <!-- Dropdown -->
+    <div class="dropdown">
+        <a class="dropdown-btn">Departments </a>
+        <div class="dropdown-container">
+            <a href="Requests.html">Associations</a>
+            <a href="#">Jobs</a>
+            <a href="#">Events</a>
+            <a href="#">Reviews & Complaints</a>
+        </div>
+    </div>
+
+    <a href="Admin.html">Profile Settings</a>
+</div>
+
+     <!-- Main Content -->
+  <div class="main-content">
+    <h1>Here are some report charts</h1>
+
+    <div class="charts-wrapper">
+      <div class="chart-container left">
+        <h2>Number Of Users</h2>
+        <canvas id="myChart"></canvas>
+      </div>
+
+      <div class="chart-container right">
+        <h2>Type Of Users</h2>
+        <canvas id="userChart"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script src="script.js"></script>
+
+</body>
+</html>
