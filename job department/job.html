@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina- Département Emploi</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <!-- Link to the external CSS file -->
+    <link rel="stylesheet" href="CSS/job.css">
+</head>
+<body>
+    <!-- NAVBAR-->
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-lightbulb"></i>
+            <span>Lumina</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#accueil"><i class="fas fa-home"></i> Accueil</a></li>
+             <li><a href="#departement-social"><i class="fas fa-hands-helping"></i> Departement Social</a></li>
+              <li><a href="#evenements"><i class="fas fa-calendar-alt"></i> Evenements</a></li>
+              <li class="dropdown">
+               <a href="#service-emploi" class="dropdown-toggle">
+                  <i class="fas fa-briefcase"></i> Service de l'Emploi 
+                   <i class="fas fa-chevron-down"></i>
+              </a>
+             <ul class="dropdown-menu">
+                 <li><a href="#service-emploi"><i class="fas fa-search"></i> Recherche d'Emploi</a></li>
+                  <li><a href="#suivi-candidatures"><i class="fas fa-chart-line"></i> Suivi Candidatures</a></li>
+                 <li><a href="publish-offer.html"><i class="fas fa-plus-circle"></i> Publier une Offre</a></li>
+             </ul>
+          </li>
+      </ul>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="theme-toggle">
+                <i class="fas fa-sun"></i>
+            </button>
+            <button class="btn btn-outline"><i class="fas fa-sign-in-alt"></i> Connexion</button>
+            <button class="btn btn-primary"><i class="fas fa-user-plus"></i> Inscription</button>
+        </div>
+    </nav>
+
+    <!-- ACCUEIL: Blank Placeholder-->
+    <section id="accueil" class="blank-section">
+        <div class="section-placeholder">
+            <h2>Accueil</h2>
+            <p>Cette section sera bientôt disponible.</p>
+        </div>
+    </section>
+
+    <!-- DEPARTEMENT SOCIAL: Blank-->
+    <section id="departement-social" class="blank-section">
+        <div class="section-placeholder">
+            <h2>Département Social</h2>
+            <p>Cette section sera bientôt disponible.</p>
+        </div>
+    </section>
+
+    <!-- EVENEMENTS: Blank-->
+    <section id="evenements" class="blank-section">
+        <div class="section-placeholder">
+            <h2>Événements</h2>
+            <p>Cette section sera bientôt disponible.</p>
+        </div>
+    </section>
+
+    <!-- SERVICE DE L'EMPLOI: Contains ALL employment content-->
+    <section id="service-emploi" class="service-emploi">
+        <!-- Former"Accueil" Hero Content — now inside Service de l'Emploi-->
+        <section class="hero">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-title fade-in">Trouvez l'emploi de vos rêves en Tunisie</h1>
+                    <p class="hero-subtitle fade-in delay-1">Lumina révolutionne la recherche d'emploi avec un système intelligent et sécurisé qui connecte les talents aux entreprises sérieuses.</p>
+                    <div class="hero-buttons fade-in delay-2">
+                        <a href="#espaces" class="btn btn-primary"><i class="fas fa-briefcase"></i> Voir les offres</a>
+                        <a href="publish-offer.html" class="btn btn-outline" style="color: white; border-color: white;">
+                            <i class="fas fa-building"></i> Publier une offre
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="floating-card" id="flip-card">
+                        <div class="card-front">
+                            <div class="card-icon"><i class="fas fa-user-graduate"></i></div>
+                            <h3 class="card-title">Pour les chercheurs d'emploi</h3>
+                            <p class="card-text">Notre algorithme de matching avancé analyse vos compétences, expériences et aspirations...</p>
+                        </div>
+                        <div class="card-back">
+                            <div class="card-icon"><i class="fas fa-building"></i></div>
+                            <h3 class="card-title">Pour les entreprises</h3>
+                            <p class="card-text">Publiez vos offres après validation rigoureuse...</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features" id="features">
+            <h2 class="section-title fade-in">Fonctionnalités principales</h2>
+            <p class="section-subtitle fade-in delay-1">Découvrez comment Lumina transforme l'expérience de recrutement en Tunisie</p>
+            <div class="features-grid">
+                <div class="feature-card fade-in">
+                    <div class="feature-icon"><i class="fas fa-brain"></i></div>
+                    <h3 class="feature-title">Matching Algorithmique</h3>
+                    <p class="feature-text">Notre algorithme analyse en profondeur les compétences, expériences et aspirations pour proposer les offres les plus pertinentes.</p>
+                </div>
+                <div class="feature-card fade-in delay-1">
+                    <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                    <h3 class="feature-title">Validation Rigoureuse</h3>
+                    <p class="feature-text">Toutes les offres d'emploi sont vérifiées et validées par nos administrateurs pour éliminer tout risque d'arnaques.</p>
+                </div>
+                <div class="feature-card fade-in delay-2">
+                    <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                    <h3 class="feature-title">Suivi Détailé</h3>
+                    <p class="feature-text">Suivez chaque candidature avec des statuts détaillés: postulé, consulté, entretien, accepté.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="process" id="process">
+            <h2 class="section-title fade-in">Comment ça marche</h2>
+            <p class="section-subtitle fade-in delay-1">Un processus simplifié pour connecter les talents aux opportunités</p>
+            <div class="process-steps">
+                <div class="step fade-in">
+                    <div class="step-number">1</div>
+                    <h3 class="step-title">Inscription</h3>
+                    <p class="step-text">Créez votre profil en tant que chercheur d'emploi ou entreprise avec vérification des informations.</p>
+                </div>
+                <div class="step fade-in delay-1">
+                    <div class="step-number">2</div>
+                    <h3 class="step-title">Matching</h3>
+                    <p class="step-text">Notre algorithme analyse et fait correspondre les profils avec les offres les plus pertinentes.</p>
+                </div>
+                <div class="step fade-in delay-2">
+                    <div class="step-number">3</div>
+                    <h3 class="step-title">Validation</h3>
+                    <p class="step-text">Les offres d'emploi sont validées par nos administrateurs pour garantir leur authenticité.</p>
+                </div>
+                <div class="step fade-in delay-3">
+                    <div class="step-number">4</div>
+                    <h3 class="step-title">Recrutement</h3>
+                    <p class="step-text">Les entreprises et candidats se connectent dans un cadre transparent et efficace.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Espaces(Updated Forms)-->
+        <section class="forms" id="espaces">
+            <h2 class="section-title fade-in">Rejoignez Lumina</h2>
+            <p class="section-subtitle fade-in delay-1">Créez votre compte dès aujourd'hui</p>
+            <div class="forms-container">
+                <!-- Espace Candidat-->
+                <div class="form-section fade-in delay-1">
+                    <h3 class="form-title"><i class="fas fa-user-graduate"></i> Espace Candidats</h3>
+
+                    <div class="form-group">
+                        <label class="form-label" for="candidate-name"><i class="fas fa-user"></i> Nom complet</label>
+                        <input type="text" id="candidate-name" class="form-input" placeholder="Votre nom et prénom" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="candidate-email"><i class="fas fa-envelope"></i> Email</label>
+                        <input type="email" id="candidate-email" class="form-input" placeholder="votre@email.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="candidate-phone"><i class="fas fa-mobile-alt"></i> Téléphone</label>
+                        <input type="tel" id="candidate-phone" class="form-input" placeholder="+216 XX XXX XXX" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="candidate-profession"><i class="fas fa-briefcase"></i> Profession/ Poste visé</label>
+                        <input type="text" id="candidate-profession" class="form-input" placeholder="Développeur, Comptable..." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="desired-salary"><i class="fas fa-money-bill-wave"></i> Salaire souhaité[DT/mois]</label>
+                        <input type="number" id="desired-salary" class="form-input" placeholder="Ex: 1800" min="0" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="preferred-location"><i class="fas fa-map-pin"></i> Localisation préférée</label>
+                        <input type="text" id="preferred-location" class="form-input" placeholder="Tunis, Sfax, Remote..." required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="skills"><i class="fas fa-laptop-code"></i> Compétences</label>
+                        <textarea id="skills" class="form-input form-textarea" placeholder="JavaScript, React, Communication..." rows="3" required></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="experience"><i class="fas fa-graduation-cap"></i> Expérience professionnelle</label>
+                        <textarea id="experience" class="form-input form-textarea" placeholder="Décrivez brièvement votre parcours..." rows="4" required></textarea>
+                    </div>
+
+                    <button class="form-submit">postuler</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION SUIVI DES CANDIDATURES- NOUVELLE VERSION-->
+        <section class="application-tracker" id="suivi-candidatures">
+            <h2>Suivi de vos Candidatures</h2>
+
+            <div class="tracker-container">
+                <div>
+                    <!-- Filtres-->
+                    <div class="tracker-filters">
+                        <button class="filter-btn active" data-filter="all">Toutes</button>
+                        <button class="filter-btn" data-filter="submitted">Soumises</button>
+                        <button class="filter-btn" data-filter="viewed">Consultées</button>
+                        <button class="filter-btn" data-filter="interview">Entretiens</button>
+                        <button class="filter-btn" data-filter="offer">Offres</button>
+                    </div>
+
+                    <!-- Timeline des candidatures-->
+                    <div class="tracker-timeline">
+                        <!-- Vos données exactes conservées-->
+                        <div class="timeline-item submitted" data-status="submitted">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h4>Candidature soumise</h4>
+                                <p>Développeur Frontend- Startup XYZ</p>
+                                <span class="timeline-date">15 Nov 2024- 14:30</span>
+                                <div class="company-info">
+                                    <small><i class="fas fa-building"></i> Tech Startup · Tunis</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item viewed" data-status="viewed">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h4>CV consulté</h4>
+                                <p>Le recruteur a vu votre profil</p>
+                                <span class="timeline-date">16 Nov 2024- 09:15</span>
+                                <div class="company-info">
+                                    <small><i class="fas fa-building"></i> Startup XYZ · Recruteur: Sarah M.</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item interview upcoming" data-status="interview">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h4>Entretien programmé</h4>
+                                <p>Entretien technique avec l'équipe développement</p>
+                                <span class="timeline-date">18 Nov 2024- 10:00(Teams)</span>
+                                <button class="calendar-btn">
+                                    <i class="fas fa-calendar-plus"></i> Ajouter au calendrier
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item submitted" data-status="submitted">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h4>Candidature soumise</h4>
+                                <p>Data Analyst- Banque ABC</p>
+                                <span class="timeline-date">14 Nov 2024- 11:20</span>
+                                <div class="company-info">
+                                    <small><i class="fas fa-building"></i> Secteur Bancaire · Lac 2</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item viewed" data-status="viewed">
+                            <div class="timeline-marker"></div>
+                            <div class="timeline-content">
+                                <h4>CV consulté</h4>
+                                <p>Votre profil intéresse le recruteur</p>
+                                <span class="timeline-date">17 Nov 2024- 16:45</span>
+                                <div class="company-info">
+                                    <small><i class="fas fa-building"></i> Banque ABC · RH Department</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Actions-->
+                    <div class="tracker-actions">
+                        <button class="action-btn primary">
+                            <i class="fas fa-plus"></i> Nouvelle Candidature
+                        </button>
+                        <button class="action-btn secondary">
+                            <i class="fas fa-download"></i> Exporter le Suivi
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Statistiques-->
+                <div class="application-stats">
+                    <div class="stat-card">
+                        <div class="stat-number">12</div>
+                        <div class="stat-label">Candidatures envoyées</div>
+                        <div class="stat-trend up">+2 cette semaine</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-number">5</div>
+                        <div class="stat-label">Entretiens programmés</div>
+                        <div class="stat-trend up">+1 aujourd'hui</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-number">2</div>
+                        <div class="stat-label">Offres reçues</div>
+                        <div class="stat-trend neutral">En attente</div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-number">63%</div>
+                        <div class="stat-label">Taux de réponse</div>
+                        <div class="stat-trend up">+5% vs mois dernier</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Lumina</h3>
+                <p>Plateforme innovante de solidarité nationale en Tunisie, connectant efficacement les citoyens avec les ressources dont ils ont besoin.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fas fa-map-marker-alt"></i> Tunis, Tunisia</a></li>
+                    <li><a href="mailto:contact@lumina.tn"><i class="fas fa-envelope"></i> contact@lumina.tn</a></li>
+                    <li><a href="tel:+21670123456"><i class="fas fa-phone"></i>+216 70 123 456</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Réseaux sociaux</h3>
+                <ul class="footer-links">
+                    <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
+                    <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Lumina- Plateforme de Solidarité Nationale Tunisienne. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Theme toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const html = document.documentElement;
+
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        html.setAttribute('data-theme', savedTheme);
+        themeToggle.innerHTML = savedTheme === 'dark' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+        themeToggle.addEventListener('click', () => {
+            const current = html.getAttribute('data-theme');
+            const newTheme = current === 'dark' ? 'light' : 'dark';
+            html.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            themeToggle.innerHTML = newTheme === 'dark' ? '<i class="fas fa-moon"></i>' : '<i class="fas fa-sun"></i>';
+        });
+
+        // Scroll effects
+        window.addEventListener('scroll', () => {
+            document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
+        });
+
+        // Card flip
+        const flipCard = document.getElementById('flip-card');
+        setInterval(() => flipCard.classList.toggle('flipped'), 5000);
+
+        // Fade-in on scroll
+        const fadeElements = document.querySelectorAll('.fade-in');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) entry.target.classList.add('visible');
+            });
+        }, { threshold: 0.1 });
+        fadeElements.forEach(el => observer.observe(el));
+
+        // Script pour la section Suivi des Candidatures- NOUVEAU
+        document.addEventListener('DOMContentLoaded', function () {
+            // Animation des éléments de la timeline
+            const timelineItems = document.querySelectorAll('.timeline-item');
+
+            const timelineObserver = new IntersectionObserver((entries) => {
+                entries.forEach((entry, index) => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            entry.target.classList.add('visible');
+                        }, index * 200);
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            timelineItems.forEach(item => timelineObserver.observe(item));
+
+            // Filtrage des candidatures
+            const filterButtons = document.querySelectorAll('.filter-btn');
+
+            filterButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    // Retirer la classe active de tous les boutons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Ajouter la classe active au bouton cliqué
+                    this.classList.add('active');
+
+                    const filter = this.getAttribute('data-filter');
+
+                    timelineItems.forEach(item => {
+                        if (filter === 'all') {
+                            item.style.display = 'flex';
+                        } else {
+                            const status = item.getAttribute('data-status');
+                            if (status === filter) {
+                                item.style.display = 'flex';
+                            } else {
+                                item.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+
+            // Fonctionnalité d'ajout au calendrier
+            const calendarBtn = document.querySelector('.calendar-btn');
+            calendarBtn.addEventListener('click', function () {
+                const eventTitle = 'Entretien Technique- Startup XYZ';
+                const eventDate = '2024-11-18T10:00:00';
+                const eventDescription = 'Entretien pour le poste de Développeur Frontend';
+
+                // Créer un événement calendrier(format ICS)
+                const icsContent = [
+                    'BEGIN:VCALENDAR',
+                    'VERSION:2.0',
+                    'BEGIN:VEVENT',
+                    `SUMMARY:${eventTitle}`,
+                    `DTSTART:${formatDateForICS(eventDate)}`,
+                    `DTEND:${formatDateForICS('2024-11-18T11:00:00')}`,
+                    `DESCRIPTION:${eventDescription}`,
+                    'LOCATION:Microsoft Teams',
+                    'END:VEVENT',
+                    'END:VCALENDAR'
+                ].join('\n');
+
+                // Télécharger le fichier ICS
+                const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
+                const link = document.createElement('a');
+                link.href = URL.createObjectURL(blob);
+                link.download = 'entretien-startup-xyz.ics';
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+
+                // Feedback utilisateur
+                const originalText = calendarBtn.innerHTML;
+                calendarBtn.innerHTML = '<i class="fas fa-check"></i> Ajouté au calendrier!';
+                calendarBtn.style.background = 'linear-gradient(135deg,#2ecc71,#27ae60)';
+                setTimeout(() => {
+                    calendarBtn.innerHTML = originalText;
+                    calendarBtn.style.background = '';
+                }, 3000);
+            });
+
+            function formatDateForICS(dateString) {
+                const date = new Date(dateString);
+                return date.toISOString().replace(/[-:]/g, '').split('.')[0] + 'Z';
+            }
+
+            // Mise à jour en temps réel des statistiques(simulation)
+            function updateStats() {
+                const stats = document.querySelectorAll('.stat-number');
+                stats.forEach(stat => {
+                    const currentValue = parseInt(stat.textContent);
+                    if (typeof currentValue === 'number' && !isNaN(currentValue)) {
+                        // Animation de comptage(pour démonstration)
+                        let start = 0;
+                        const end = currentValue;
+                        const duration = 2000;
+                        const step = end / (duration / 16);
+
+                        const timer = setInterval(() => {
+                            start += step;
+                            if (start >= end) {
+                                stat.textContent = end;
+                                clearInterval(timer);
+                            } else {
+                                stat.textContent = Math.floor(start);
+                            }
+                        }, 16);
+                    }
+                });
+            }
+
+            // Démarrer l'animation des statistiques
+            setTimeout(updateStats, 1000);
+        });
+    </script>
+</body>
+</html>
