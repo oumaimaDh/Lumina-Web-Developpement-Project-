@@ -1,4 +1,48 @@
-document.addEventListener('DOMContentLoaded', () => {
+// Sidebar functionality
+function toggleSidebar() {
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.toggle('open');
+}
+
+// Enhanced dropdown functionality
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize dropdowns
+    const dropdowns = document.querySelectorAll('.dropdown-btn');
+    
+    dropdowns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            this.classList.toggle('active');
+            const container = this.nextElementSibling;
+            container.classList.toggle('show');
+        });
+    });
+
+    // Search functionality for Manage.html
+    const searchInput = document.getElementById('searchInput');
+    if (searchInput) {
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const rows = document.querySelectorAll('#usersTable tbody tr');
+            
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(searchTerm) ? '' : 'none';
+            });
+        });
+    }
+
+    // Modal functionality
+    const editModal = document.getElementById('editModal');
+    if (editModal) {
+        // Close modal when clicking outside
+        window.addEventListener('click', function(event) {
+            if (event.target === editModal) {
+                closeEditModal();
+            }
+        });
+    }
+
+    // Chart initialization (keep your existing chart code)
     const canvas1 = document.getElementById('myChart');
     const canvas2 = document.getElementById('userChart');
     
@@ -79,20 +123,55 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
-
+// Sidebar toggle function
 function toggleSidebar() {
     const sidebar = document.getElementById('sidebar');
     sidebar.classList.toggle('open');
+    document.body.classList.toggle('sidebar-open');
 }
 
-const dropdowns = document.querySelectorAll('.dropdown-btn');
+// Redirect to Edit-User page
+function editUser(userId) {
+    // In a real application, you might pass the user ID as a parameter
+    window.location.href = 'Edit-User.html?id=' + userId;
+}
 
-dropdowns.forEach(btn => {
-  btn.addEventListener('click', () => {
-    btn.classList.toggle('active'); // Add subtle visual cue
-    const container = btn.nextElementSibling;
-    container.style.display = container.style.display === 'block' ? 'none' : 'block';
-  });
+// Delete user function
+function deleteUser(userId) {
+    if (confirm('Are you sure you want to delete this user?')) {
+        // In a real application, you would make an API call here
+        alert('User ' + userId + ' deleted successfully!');
+        // Refresh the page or remove the row from the table
+        location.reload();
+    }
+}
+
+// Toggle block user function
+function toggleBlockUser(userId) {
+    // In a real application, you would make an API call here
+    alert('User ' + userId + ' block status toggled!');
+    // Refresh the page or update the status in the table
+    location.reload();
+}
+
+// Search functionality
+document.getElementById('searchInput').addEventListener('input', function() {
+    const searchTerm = this.value.toLowerCase();
+    const table = document.getElementById('usersTable');
+    const rows = table.getElementsByTagName('tbody')[0].getElementsByTagName('tr');
+    
+    for (let i = 0; i < rows.length; i++) {
+        const cells = rows[i].getElementsByTagName('td');
+        let found = false;
+        
+        for (let j = 0; j < cells.length; j++) {
+            const cellText = cells[j].textContent.toLowerCase();
+            if (cellText.includes(searchTerm)) {
+                found = true;
+                break;
+            }
+        }
+        
+        rows[i].style.display = found ? '' : 'none';
+    }
 });
-
-

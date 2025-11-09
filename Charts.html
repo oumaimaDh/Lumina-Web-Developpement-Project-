@@ -1,56 +1,170 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Chart Page</title>
-    <!-- Include Chart.js library -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analytics Dashboard - Reports</title>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="admin.css">
 </head>
 <body>
 
-  <!-- Toggle Button (this should always show) -->
-  <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
+ <!-- Toggle Button -->
+ <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
 
- 
-  <!-- Sidebar -->
-  <div class="sidebar" id="sidebar">
-    <a href="homepage.html">Home</a>
-    <a href="Manage.html">Users</a>
-    <a href="Charts.html">Reports</a>
+ <!-- Sidebar -->
+ <div class="sidebar" id="sidebar">
+     <a href="homepage.html"><i class="fas fa-home"></i> Home</a>
+     <a href="Manage.html"><i class="fas fa-users"></i> Users</a>
+     <a href="Charts.html" ><i class="fas fa-chart-bar"></i> Reports</a>
+     <div class="dropdown">
+         <a class="dropdown-btn"><i class="fas fa-building"></i> Departments</a>
+         <div class="dropdown-container">
+             <a href="Requests.html"><i class="fas fa-handshake"></i> Associations</a>
+             <a href="#"><i class="fas fa-briefcase"></i> Jobs</a>
+             <a href="#"><i class="fas fa-calendar-alt"></i> Events</a>
+             <a href="#"><i class="fas fa-comments"></i> Reviews & Complaints</a>
+         </div>
+     </div>
+     <a href="Admin.html"><i class="fas fa-user-cog"></i> Profile Settings</a>
+ </div>
 
-    <!-- Dropdown -->
-    <div class="dropdown">
-        <a class="dropdown-btn">Departments </a>
-        <div class="dropdown-container">
-            <a href="Requests.html">Associations</a>
-            <a href="#">Jobs</a>
-            <a href="#">Events</a>
-            <a href="#">Reviews & Complaints</a>
-        </div>
-    </div>
+ <!-- Main Content -->
+ <div class="main-content">
+     <!-- Page Header -->
+     <div class="analytics-header">
+         <div class="header-content">
+             <h1><i class="fas fa-chart-line"></i> Analytics Dashboard</h1>
+         </div>
+         <div class="header-actions">
+             <select class="period-select">
+                 <option>Last 7 Days</option>
+                 <option>Last 30 Days</option>
+                 <option selected>Last 3 Months</option>
+                 <option>Last Year</option>
+             </select>
+         </div>
+     </div>
 
-    <a href="Admin.html">Profile Settings</a>
-</div>
+     <!-- Compact Stats Row -->
+     <div class="compact-stats">
+         <div class="stat-item">
+             <div class="stat-main">
+                 <span class="stat-value">1,247</span>
+                 <span class="stat-label">Total Users</span>
+             </div>
+             <div class="stat-trend positive">
+                 <i class="fas fa-arrow-up"></i> 12%
+             </div>
+         </div>
+         <div class="stat-item">
+             <div class="stat-main">
+                 <span class="stat-value">89</span>
+                 <span class="stat-label">Associations</span>
+             </div>
+             <div class="stat-trend positive">
+                 <i class="fas fa-arrow-up"></i> 5%
+             </div>
+         </div>
+         <div class="stat-item">
+             <div class="stat-main">
+                 <span class="stat-value">23</span>
+                 <span class="stat-label">Pending</span>
+             </div>
+             <div class="stat-trend negative">
+                 <i class="fas fa-arrow-down"></i> 8%
+             </div>
+         </div>
+         <div class="stat-item">
+             <div class="stat-main">
+                 <span class="stat-value">68%</span>
+                 <span class="stat-label">Engagement</span>
+             </div>
+             <div class="stat-trend positive">
+                 <i class="fas fa-arrow-up"></i> 3%
+             </div>
+         </div>
+     </div>
 
-     <!-- Main Content -->
-  <div class="main-content">
-    <h1>Here are some report charts</h1>
+     <!-- Main Charts Grid -->
+     <div class="charts-grid">
+         <!-- Row 1 -->
+         <div class="chart-wrapper">
+             <div class="chart-header">
+                 <h3>User Growth</h3>
+                 <div class="chart-controls">
+                     <button class="control-btn"><i class="fas fa-expand"></i></button>
+                 </div>
+             </div>
+             <div class="chart-container">
+                 <canvas id="growthChart"></canvas>
+             </div>
+         </div>
 
-    <div class="charts-wrapper">
-      <div class="chart-container left">
-        <h2>Number Of Users</h2>
-        <canvas id="myChart"></canvas>
-      </div>
+         <div class="chart-wrapper">
+             <div class="chart-header">
+                 <h3>User Distribution</h3>
+                 <div class="chart-controls">
+                     <button class="control-btn"><i class="fas fa-download"></i></button>
+                 </div>
+             </div>
+             <div class="chart-container">
+                 <canvas id="distributionChart"></canvas>
+             </div>
+         </div>
 
-      <div class="chart-container right">
-        <h2>Type Of Users</h2>
-        <canvas id="userChart"></canvas>
-      </div>
-    </div>
-  </div>
+         <!-- Row 2 -->
+         <div class="chart-wrapper">
+             <div class="chart-header">
+                 <h3>Platform Activity</h3>
+                 <div class="chart-controls">
+                     <button class="control-btn"><i class="fas fa-refresh"></i></button>
+                 </div>
+             </div>
+             <div class="chart-container">
+                 <canvas id="activityChart"></canvas>
+             </div>
+         </div>
 
-  <!-- JS -->
-  <script src="script.js"></script>
+         <div class="chart-wrapper">
+             <div class="chart-header">
+                 <h3>Regional Data</h3>
+                 <div class="chart-controls">
+                     <button class="control-btn"><i class="fas fa-filter"></i></button>
+                 </div>
+             </div>
+             <div class="chart-container">
+                 <canvas id="regionalChart"></canvas>
+             </div>
+         </div>
+     </div>
+
+     <!-- Quick Insights -->
+     <div class="insights-section">
+         <h3><i class="fas fa-lightbulb"></i> Quick Insights</h3>
+         <div class="insights-grid">
+             <div class="insight-item">
+                 <i class="fas fa-user-check insight-icon"></i>
+                 <div class="insight-content">
+                     <h4>User Engagement Up</h4>
+                     <p>15% increase in volunteer signups this month</p>
+                 </div>
+             </div>
+             
+             <div class="insight-item">
+                 <i class="fas fa-clock insight-icon"></i>
+                 <div class="insight-content">
+                     <h4>Response Time</h4>
+                     <p>Average request response: 2.3 hours</p>
+                 </div>
+             </div>
+         </div>
+     </div>
+ </div>
+
+ <script src="charts.js"></script>
+ <script src="script.js"></script>
 
 </body>
 </html>
