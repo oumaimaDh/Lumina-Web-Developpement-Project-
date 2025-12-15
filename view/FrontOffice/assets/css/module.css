@@ -1,0 +1,577 @@
+.forum-card {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+    border: 1px solid #eee;
+}
+.forum-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+}
+
+/* Forum Title */
+.forum-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+/* Forum Content */
+.forum-content {
+    font-size: 15px;
+    color: #444;
+    margin-bottom: 15px;
+}
+
+/* Forum Footer */
+.forum-footer {
+    font-size: 13px;
+    color: #888;
+}
+
+button.main-button {
+    padding: 12px 30px;
+    background-color: #400c94;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+    transition: all .3s;
+    margin: 20px 0;
+}
+
+button.main-button:hover {
+    background-color: rgb(115, 50, 220);
+    opacity: 0.8;
+}
+.like-button {
+    padding: 8px 20px;
+    background: #ff3f6e;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: 0.2s;
+}
+
+.like-button:hover {
+    background: #ff648b;
+}
+/* Reply button */
+.reply-button {
+    padding: 8px 18px;
+    background-color: #4CAF50; /* green */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-right: 8px;
+}
+
+.reply-button:hover {
+    background-color: #45a049;
+    transform: translateY(-2px);
+}
+
+/* Edit Question button */
+.edit-button {
+    padding: 8px 18px;
+    background-color: #2196F3; /* blue */
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-right: 8px;
+}
+
+.edit-button:hover {
+    background-color: #0b7dda;
+    transform: translateY(-2px);
+}
+
+/* Edit Response button inside response cards */
+.edit-response-form button {
+    padding: 6px 14px;
+    background-color: #f0ad4e; /* orange/golden */
+    color: white;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: background-color 0.3s;
+}
+
+.edit-response-form button:hover {
+    background-color: #ec971f;
+}
+.delete-btn {
+    padding: 8px 18px;
+    background: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s, transform 0.2s;
+    margin-right: 8px;
+}
+
+.delete-btn:hover {
+    background: #c0392b;
+    transform: scale(1.05);
+}
+/* ========================================
+   ENHANCED FORUM FORMS STYLING
+   ======================================== */
+
+/* Reply Form Styling */
+.reply-form {
+    background: linear-gradient(135deg, #f8f9fa, #ffffff);
+    border: 2px solid #e0e6ed;
+    border-radius: 15px;
+    padding: 20px;
+    margin-top: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.reply-form textarea.reply-text {
+    width: 100%;
+    min-height: 120px;
+    padding: 15px;
+    border: 2px solid #d1d9e6;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: inherit;
+    resize: vertical;
+    transition: all 0.3s ease;
+    background: white;
+    color: #333;
+    line-height: 1.6;
+}
+
+.reply-form textarea.reply-text:focus {
+    outline: none;
+    border-color: #4CAF50;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.1);
+    background: #fafffe;
+}
+
+.reply-form textarea.reply-text::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+.reply-form button[type="button"] {
+    padding: 12px 28px;
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 12px;
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+.reply-form button[type="button"]:hover {
+    background: linear-gradient(135deg, #45a049, #3d8b40);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
+}
+
+.reply-form button[type="button"]:active {
+    transform: translateY(0);
+}
+
+/* Edit Question Form Styling */
+.edit-form {
+    background: linear-gradient(135deg, #fff9e6, #ffffff);
+    border: 2px solid #ffe4a3;
+    border-radius: 15px;
+    padding: 25px;
+    margin-top: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    animation: slideDown 0.3s ease;
+}
+
+.edit-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.edit-form input[type="text"],
+.edit-form textarea,
+.edit-form select {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #e0e6ed;
+    border-radius: 10px;
+    font-size: 15px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+    background: white;
+    color: #333;
+}
+
+.edit-form input[type="text"]:focus,
+.edit-form textarea:focus,
+.edit-form select:focus {
+    outline: none;
+    border-color: #2196F3;
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+    background: #f9fcff;
+}
+
+.edit-form textarea {
+    min-height: 140px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.edit-form select {
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23333' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 40px;
+}
+
+.edit-form button[type="submit"] {
+    padding: 12px 28px;
+    background: linear-gradient(135deg, #2196F3, #1976D2);
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(33, 150, 243, 0.3);
+    align-self: flex-start;
+}
+
+.edit-form button[type="submit"]:hover {
+    background: linear-gradient(135deg, #1976D2, #1565C0);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(33, 150, 243, 0.4);
+}
+
+/* Edit Response Form Styling */
+.edit-response-form {
+    background: linear-gradient(135deg, #fff3e0, #ffffff);
+    border: 2px solid #ffcc80;
+    border-radius: 12px;
+    padding: 20px;
+    margin-top: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+    animation: slideDown 0.3s ease;
+}
+
+.edit-response-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.edit-response-form textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 12px 15px;
+    border: 2px solid #e0e6ed;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    resize: vertical;
+    transition: all 0.3s ease;
+    background: white;
+    line-height: 1.6;
+}
+
+.edit-response-form textarea:focus {
+    outline: none;
+    border-color: #f0ad4e;
+    box-shadow: 0 0 0 3px rgba(240, 173, 78, 0.1);
+    background: #fffbf5;
+}
+
+.edit-response-form button[type="submit"] {
+    padding: 10px 24px;
+    background: linear-gradient(135deg, #f0ad4e, #ec971f);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(240, 173, 78, 0.3);
+    align-self: flex-start;
+}
+
+.edit-response-form button[type="submit"]:hover {
+    background: linear-gradient(135deg, #ec971f, #d58512);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(240, 173, 78, 0.4);
+}
+
+/* Response Card Styling */
+.response-card {
+    background: white;
+    border-left: 4px solid #4CAF50;
+    border-radius: 12px;
+    padding: 18px;
+    margin-bottom: 15px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.response-card:hover {
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.12);
+    transform: translateX(3px);
+}
+
+.response-card p {
+    margin: 0 0 10px 0;
+    color: #333;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+.response-card small {
+    color: #777;
+    font-size: 13px;
+    display: block;
+    margin-bottom: 12px;
+}
+
+/* Response Actions */
+.response-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+/* Responses Container */
+.responses-container {
+    margin-top: 20px;
+    padding: 20px;
+    background: linear-gradient(135deg, #f5f7fa, #ffffff);
+    border-radius: 15px;
+    border: 2px solid #e0e6ed;
+}
+
+.responses-container > p {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+}
+
+/* Form Labels (if you add them) */
+.form-label {
+    display: block;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Character Counter (optional enhancement) */
+.char-counter {
+    text-align: right;
+    font-size: 12px;
+    color: #999;
+    margin-top: 5px;
+}
+
+.char-counter.warning {
+    color: #f0ad4e;
+}
+
+.char-counter.danger {
+    color: #e74c3c;
+}
+
+/* Loading State for Forms */
+.form-loading {
+    opacity: 0.6;
+    pointer-events: none;
+    position: relative;
+}
+
+.form-loading::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 30px;
+    margin: -15px 0 0 -15px;
+    border: 3px solid #f3f3f3;
+    border-top: 3px solid #4CAF50;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Success/Error Messages in Forms */
+.form-message {
+    padding: 12px 16px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 14px;
+    animation: slideDown 0.3s ease;
+}
+
+.form-message.success {
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.form-message.error {
+    background: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Button Group in Forms */
+.form-button-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.btn-cancel {
+    padding: 10px 24px;
+    background: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn-cancel:hover {
+    background: #5a6268;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .reply-form,
+    .edit-form,
+    .edit-response-form {
+        padding: 15px;
+    }
+    
+    .reply-form textarea.reply-text,
+    .edit-form textarea {
+        min-height: 100px;
+    }
+    
+    .form-button-group {
+        flex-direction: column;
+    }
+    
+    .form-button-group button {
+        width: 100%;
+    }
+    
+    .edit-form button[type="submit"],
+    .edit-response-form button[type="submit"] {
+        width: 100%;
+    }
+}
+
+/* Focus visible for accessibility */
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid #4CAF50;
+    outline-offset: 2px;
+}
+
+/* Disabled state */
+button:disabled,
+input:disabled,
+textarea:disabled,
+select:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Smooth transitions for all form elements */
+input, textarea, select, button {
+    transition: all 0.3s ease;
+}
+
+/* Enhanced placeholder styling */
+input::placeholder,
+textarea::placeholder {
+    color: #999;
+    opacity: 1;
+}
+
+input:focus::placeholder,
+textarea:focus::placeholder {
+    opacity: 0.6;
+}
+
+/* Custom scrollbar for textareas */
+textarea::-webkit-scrollbar {
+    width: 8px;
+}
+
+textarea::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+textarea::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+textarea::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}

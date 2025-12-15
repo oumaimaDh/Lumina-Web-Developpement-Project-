@@ -1,0 +1,79 @@
+<!-- Edit-User.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit User</title>
+  <link rel="stylesheet" href="edit.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="main-content">
+    <div class="page-header">
+      <h1><i class="fas fa-user-edit"></i> Edit User</h1>
+      <p>Update user information and permissions</p>
+    </div>
+
+    <div class="form-container">
+      <form id="editUserForm" method="post" action="editUser.php">
+        <div class="form-section">
+          <h3><i class="fas fa-id-card"></i> Basic Information</h3>
+          
+          <div class="form-group">
+            <label for="userId">User ID</label>
+            <input type="text" id="userId" readonly class="readonly-field" />
+          </div>
+          
+          <div class="form-group">
+            <label for="username">Username <span class="required">*</span></label>
+            <input type="text" id="username" placeholder="Enter username" required />
+          </div>
+          
+          <div class="form-group">
+            <label for="email">Email Address <span class="required">*</span></label>
+            <input type="email" id="email" placeholder="Enter email address" required />
+          </div>
+        </div> <!-- Close Basic Information section -->
+        
+        <div class="form-section">
+          <h3><i class="fas fa-user-tag"></i> Account Settings</h3>
+        </div> <!-- Close Account Settings section -->
+        
+        <div class="form-actions">
+          <button type="button" class="btn-secondary" onclick="window.location.href='dashboard.html'">
+            <i class="fas fa-arrow-left"></i> Back to Users
+          </button>
+          
+          <div class="action-buttons-group">
+            <button type="button" class="btn-danger" id="resetBtn">
+              <i class="fas fa-undo"></i> Reset
+            </button>
+            <button type="submit" class="btn-primary">
+              <i class="fas fa-save"></i> Save Changes
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Success Modal -->
+  <div class="modal" id="successModal">
+    <div class="modal-content">
+      <div class="modal-icon success">
+        <i class="fas fa-check-circle"></i>
+      </div>
+      <h2>Success!</h2>
+      <p>User information has been updated successfully.</p>
+      <div class="modal-actions">
+        <button class="btn-primary" onclick="closeSuccessModal()">Continue</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="edit.js"></script>
+
+</body>
+</html>

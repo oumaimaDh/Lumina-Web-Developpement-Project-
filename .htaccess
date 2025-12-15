@@ -1,0 +1,9 @@
+# Enable directory listing
+Options +Indexes
+
+# Disable automatic index file serving (show directory listing instead)
+DirectoryIndex disabled
+
+# Customize directory listing appearance
+IndexOptions FancyIndexing VersionSort HTMLTable NameWidth=* DescriptionWidth=*
+

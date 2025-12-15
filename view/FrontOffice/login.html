@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Card Carousel Styles - BIGGER */
+    .brand-carousel {
+      margin-top: 25px;
+      height: 160px; /* Increased height */
+      position: relative;
+    }
+    
+    .cards {
+      --img-w: 100px; /* Bigger images */
+      --duration: 300ms;
+      --img-easing: cubic-bezier(0.34, 1.56, 0.64, 1);
+      width: 100%;
+      height: 100%;
+      margin-inline: auto;
+      display: grid;
+      counter-reset: my-counter;
+    }
+
+    .card {
+      --cards-grid-cols: auto;
+      --cards-grid-rows: var(--img-w) auto;
+      --cards-grid-gap: 1.2rem; /* Slightly bigger gap */
+      --cards-footer-justify: center;
+      
+      grid-area: 1/1;
+      display: grid;
+      place-items: center; 
+      grid-template-columns: var(--cards-grid-cols);
+      grid-template-rows: var(--cards-grid-rows);
+      gap: var(--cards-grid-gap);
+    }
+
+    .card-img {
+      width: 100px; /* Bigger images */
+      height: 100px;
+      aspect-ratio: 1 / 1;
+      rotate: var(--angle, 0deg);
+      border-radius: 10px; /* Slightly bigger radius */
+      border: 2px solid #FFF;
+      overflow: hidden;
+      transform-origin: center;
+      object-fit: cover;
+      box-shadow: 0 0 5px 3px rgba(0 0 0 / .05);
+    }
+
+    .card-data {
+      display: grid;
+      gap: 0.6rem; /* Slightly bigger gap */
+    }
+
+    .card-data > .card-num {
+      opacity: var(--data-opacity, 0);
+      font-size: .75rem; /* Slightly bigger */
+      color: #666;
+    }
+
+    .card-data > p {
+      font-size: 0.85rem; /* Slightly bigger */
+      line-height: 1.3;
+    }
+
+    .card-data > h2 {
+      font-size: 1rem; /* Slightly bigger */
+      margin: 0;
+    }
+
+    .card-data > h2,
+    .card-data > p {
+      transition: var(--duration) ease-in-out;
+      transition-delay: var(--data-delay,0ms);
+      opacity: var(--data-opacity, 0);
+      translate: 0 var(--data-y, 20px);
+    }
+
+    .card-data > footer {
+      display: flex;
+      justify-content: var(--cards-footer-justify);
+      gap: 1rem;
+      margin-top: 8px; /* Slightly bigger margin */
+    }
+
+    .card-data > footer label {
+      cursor: pointer;
+      pointer-events: var(--card-events, none);
+      opacity: var(--data-opacity, 0);
+      transition: color var(--duration) ease-in-out;
+      color: var(--label-clr-txt,#000);
+      background-color:var(--label-clr-bg,#EEE);
+      border-radius: 50%;
+      width: 28px; /* Slightly bigger */
+      height: 28px;
+      aspect-ratio: 1/1;
+      display: grid;
+      place-content: center;
+      font-size: 0.85rem; /* Slightly bigger */
+      transition: background-color 300ms ease-in-out,color  300ms ease-in-out;
+    }
+
+    /* Hide radio buttons */
+    input[type="radio"] {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+
+    /* Animation and stacking */
+    input:nth-of-type(1):checked + .card ~ .card > .card-img {
+      animation: straighten-img-1 calc(var(--duration) * 2) forwards;
+      animation-timing-function: var(--img-easing);
+    }
+
+    .card:has(~input:nth-of-type(2):checked) > .card-img,
+    input:nth-of-type(2):checked + .card ~ .card > .card-img {
+      animation: straighten-img-2 calc(var(--duration) * 2) forwards;
+      animation-timing-function: var(--img-easing);
+    }
+
+    .card:has(~input:nth-of-type(3):checked) > .card-img,
+    input:nth-of-type(3):checked + .card ~ .card > .card-img {
+      animation: straighten-img-3 calc(var(--duration) * 2) forwards;
+      animation-timing-function: var(--img-easing);
+    }
+
+    @keyframes straighten-img-1 { 50%{ --angle: 0deg;} }
+    @keyframes straighten-img-2 { 50%{ --angle: 0deg;} }
+    @keyframes straighten-img-3 { 50%{ --angle: 0deg;} }
+
+    /* Stacking order */
+    .card { z-index: -1; }
+    input:checked + .card { z-index:10 !important; }
+    .card:has(+input:checked) { z-index:9; }
+    .card:has(+input + .card + input:checked) { z-index:8; }
+
+    input:checked + .card {
+      --data-opacity: 1;
+      --data-y: 0;
+      --data-delay: var(--duration);
+      --card-events: auto;
+      transition: z-index;
+      transition-delay: 300ms;
+    }
+
+    input:checked +.card > .card-img {
+      animation: reveal-img calc(var(--duration) * 2) forwards;
+    }
+
+    @keyframes reveal-img {
+      50% {
+        translate: -120% 0; /* Adjusted for bigger size */
+        --angle: 0deg;
+      }
+    }
+
+    input:checked:focus-visible + .card > .card-data > footer label,
+    .card-data > footer label:hover {
+      --label-clr-txt: #FFF;
+      --label-clr-bg: steelblue;
+    }
+
+    /* Push Lumina content up */
+    .brand-content {
+      margin-top: -10px; /* This pushes everything up */
+    }
+
+    .brand-logo {
+      margin-bottom: 15px; /* Adjust spacing */
+    }
+  </style>
+</head>
+<body>
+  <div class="back-home">
+    <a href="newindex.html" class="back-btn">
+      <i class="fas fa-arrow-left"></i>
+      Back to Home
+    </a>
+  </div>
+  <div class="auth-container">
+    <!-- Brand Panel -->
+    <div class="brand-panel">
+      <div class="brand-logo">
+        <i class="fas fa-star"></i>
+        <h1>Lumina</h1>
+      </div>
+      <div class="brand-content">
+        <h2>Welcome Back</h2>
+        <p>Sign in to access your personalized page and continue your journey with our community.</p>
+        
+        <!-- Card Carousel - BIGGER -->
+        <div class="brand-carousel">
+          <div class="cards">
+            <input type="radio" id="radio-1" name="radio-card" checked>
+            <article class="card" style="--angle:4deg">
+              <img class="card-img" src="assets/images/heart.jpg">
+              <div class="card-data">
+                <span class="card-num">1/3</span>
+                <h2>Community Stories</h2>
+                <p>See how our members are making a difference in their communities every day.</p>
+                <footer>
+                  <label for="radio-3" aria-label="Previous">&#10094;</label>
+                  <label for="radio-2" aria-label="Next">&#10095;</label>
+                </footer>
+              </div>
+            </article>
+
+            <input type="radio" id="radio-2" name="radio-card">
+            <article class="card" style="--angle:-8deg">
+              <img class="card-img" src="assets/images/help.jpg">
+              <div class="card-data">
+                <span class="card-num">2/3</span>
+                <h2>Volunteer Impact</h2>
+                <p>Join thousands of volunteers creating positive change across Tunisia.</p>
+                <footer>
+                  <label for="radio-1" aria-label="Previous">&#10094;</label>
+                  <label for="radio-3" aria-label="Next">&#10095;</label>
+                </footer>
+              </div>
+            </article>
+
+            <input type="radio" id="radio-3" name="radio-card">
+            <article class="card" style="--angle:-7deg">
+              <img class="card-img" src="assets/images/smile.jpg">
+              <div class="card-data">
+                <span class="card-num">3/3</span>
+                <h2>Success Stories</h2>
+                <p>Discover inspiring stories of transformation and community growth.</p>
+                <footer>
+                  <label for="radio-2" aria-label="Previous">&#10094;</label>
+                  <label for="radio-1" aria-label="Next">&#10095;</label>
+                </footer>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form Panel - UNTOUCHED -->
+    <div class="form-panel">
+      <div class="form-header">
+        <h2 class="form-title">Welcome To Lumina</h2>
+        <p class="form-subtitle">Sign in to your account</p>
+      </div>
+
+      <form id="loginForm" method="post" novalidate>
+        <div class="form-group">
+          <label for="email">Email address</label>
+          <input type="email" id="email" placeholder="example@email.com">
+          <div class="feedback" id="emailFeedback"></div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Enter your password">
+          <div class="feedback" id="passwordFeedback"></div>
+        </div>
+
+        <div class="captcha-container">
+          <div class="captcha-title">
+              <i class="fas fa-heart help-icon"></i>Humanity Check
+          </div>
+          
+          <div class="captcha-question" id="captchaQuestion">
+              Which action would help someone in need right now?
+          </div>
+  
+          <div class="help-options" id="helpOptions">
+              <!-- Options will be populated by JavaScript -->
+          </div>
+  
+          <div class="captcha-feedback" id="captchaFeedback"></div>
+  
+          <div class="captcha-actions">
+              <button class="btn-captcha btn-verify" id="verifyBtn" disabled>
+                  <i class="fas fa-check"></i> Verify I'm Human
+              </button>
+              <button class="btn-captcha btn-refresh" id="refreshBtn">
+                  <i class="fas fa-redo"></i> New Question
+              </button>
+          </div>
+      </div>
+
+        <div class="form-options">
+          <div class="remember-me">
+            <input type="checkbox" id="remember" name="remember">
+            <label for="remember">Remember me</label>
+          </div>
+          <a href="forgot-password.html" class="forgot-password">Forgot password?</a>
+        </div>
+
+        <button type="submit" class="btn">Login</button>
+
+        <p class="alt-link">
+          Don't have an account? <a href="register.html">Register here</a>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <script src="login.js"></script>
+  <script src="auth.js"></script>
+</body>
+</html>

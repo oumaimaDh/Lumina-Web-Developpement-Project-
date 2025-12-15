@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Lumina</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        // BLOCK ALL COOKIES from being set
+        Object.defineProperty(document, 'cookie', {
+            get: function() { return ''; },
+            set: function() { return false; }
+        });
+        
+        // Clear existing cookies
+        document.cookie.split(";").forEach(function(c) {
+            document.cookie = c.replace(/^ +/, "").replace(/=.*/, "=;expires=" + new Date().toUTCString() + ";path=/");
+        });
+        
+        // Check if user is logged in via localStorage
+        
+        </script>
+        
+    <style>
+        /* Light Theme - Snowy Twilight Palette */
+        :root {
+            --bg: #D3D3DF;
+            --text: #575D7F;
+            --card-bg: #ffffff;
+            --border: #E3CED1;
+            --primary: #7B8AB6;
+            --secondary: #A09EBB;
+            --accent: #575D7F;
+            --gradient: linear-gradient(135deg, #7B8AB6, #A09EBB);
+            --shadow: rgba(0, 0, 0, 0.05);
+            --page-bg: #d5d5e1;
+            --muted: #999;
+            
+            /* Reference Design Colors */
+            --ref-navy: #3D4E6C;
+            --ref-purple: #6B7AA1;
+            --ref-light-bg: #F5F6FA;
+            --ref-lavender-bg: #E8EAF6;
+            --ref-button: #6B7AA1;
+            
+            /* Extended Colors */
+            --light-violet: #E8EAF6;
+            --shadow-color: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        [data-theme="dark"] {
+            --bg: #1a1a2e;
+            --text: #e6e6ff;
+            --card-bg: #16213e;
+            --border: #2d4263;
+            --primary: #7B8AB6;
+            --secondary: #8a8bb8;
+            --accent: #a09ebb;
+            --gradient: linear-gradient(135deg, #2d4263, #7B8AB6);
+            --shadow: rgba(0, 0, 0, 0.3);
+            --page-bg: #0f3460;
+            --muted: #8a8bb8;
+            
+            --ref-navy: #7B8AB6;
+            --ref-purple: #8a8bb8;
+            --ref-light-bg: #16213e;
+            --ref-lavender-bg: #2d4263;
+            --ref-button: #7B8AB6;
+            
+            --light-violet: #2d4263;
+            --shadow-color: 0 4px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', system-ui, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+            min-height: 100vh;
+            padding-top: 100px;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            height: auto;
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 15px var(--shadow);
+            box-sizing: border-box;
+        }
+
+        .logo img {
+            height: 50px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            position: relative;
+            padding: 5px 0;
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+        }
+
+        .nav-links a.active::after {
+            width: 100%;
+        }
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: var(--card-bg);
+            box-shadow: var(--shadow-color);
+            border-radius: 10px;
+            padding: 12px 0;
+            min-width: 220px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(10px);
+            transition: all 0.3s;
+            z-index: 100;
+            border: 1px solid var(--border);
+        }
+
+        .dropdown:hover .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-menu a {
+            padding: 12px 25px;
+            display: block;
+            white-space: nowrap;
+            border-bottom: none;
+        }
+
+        .dropdown-menu a:hover {
+            background: var(--light-violet);
+        }
+
+        .dropdown-menu a::after {
+            display: none;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .theme-toggle {
+            background: var(--light-violet);
+            border: none;
+            font-size: 1.3rem;
+            color: var(--primary);
+            cursor: pointer;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s;
+        }
+
+        .theme-toggle:hover {
+            transform: rotate(30deg);
+            background: var(--primary);
+            color: white;
+        }
+
+        /* Contact Page Styles */
+        .contact-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .contact-header {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .contact-header h1 {
+            font-size: 3.2rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+            position: relative;
+            display: inline-block;
+        }
+
+        .contact-header h1::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background: var(--gradient);
+            border-radius: 2px;
+        }
+
+        .contact-header p {
+            font-size: 1.25rem;
+            max-width: 700px;
+            margin: 30px auto 0;
+            color: var(--text);
+            opacity: 0.9;
+            line-height: 1.8;
+        }
+
+        /* Contact Methods Grid */
+        .contact-methods-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+            margin-bottom: 80px;
+        }
+
+        @media (max-width: 768px) {
+            .contact-methods-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .contact-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: var(--shadow-color);
+            transition: all 0.4s;
+            border: 1px solid var(--border);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+            border-color: var(--primary);
+        }
+
+        .contact-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient);
+        }
+
+        .contact-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: white;
+            font-size: 2rem;
+        }
+
+        .contact-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .contact-card p {
+            margin-bottom: 15px;
+            color: var(--text);
+            opacity: 0.9;
+            line-height: 1.7;
+        }
+
+        .contact-details {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid var(--border);
+        }
+
+        .contact-detail {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            margin: 15px 0;
+            padding: 12px 20px;
+            background: var(--light-violet);
+            border-radius: 12px;
+            transition: all 0.3s;
+        }
+
+        .contact-detail:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateX(5px);
+        }
+
+        .contact-detail:hover a {
+            color: white;
+        }
+
+        .contact-detail a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .contact-detail i {
+            color: var(--primary);
+            font-size: 1.2rem;
+            min-width: 20px;
+        }
+
+        .contact-detail:hover i {
+            color: white;
+        }
+
+        /* Team Sections */
+        .team-section, .dev-team-section {
+            margin: 80px 0;
+            text-align: center;
+        }
+
+        .team-section h2, .dev-team-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: var(--primary);
+        }
+
+        .team-grid, .dev-team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .team-member, .dev-team-member {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 30px;
+            box-shadow: var(--shadow-color);
+            transition: all 0.3s;
+        }
+
+        .team-member:hover, .dev-team-member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .member-avatar, .dev-avatar {
+            width: 100px;
+            height: 100px;
+            background: var(--gradient);
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2.5rem;
+        }
+
+        .team-member h4, .dev-team-member h4 {
+            font-size: 1.4rem;
+            margin-bottom: 8px;
+            color: var(--primary);
+        }
+
+        .team-member p, .dev-team-member p {
+            color: var(--text);
+            opacity: 0.8;
+            margin-bottom: 15px;
+        }
+
+        .member-contact, .dev-role {
+            font-size: 0.9rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+
+        /* Dev Team Specific */
+        .dev-team-section {
+            background: var(--light-violet);
+            border-radius: 20px;
+            padding: 50px;
+            margin-top: 100px;
+        }
+
+        .dev-team-member {
+            text-align: left;
+        }
+
+        .dev-module {
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid var(--border);
+        }
+
+        .dev-module h5 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .dev-module p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+            color: var(--text);
+            opacity: 0.9;
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            margin: 80px 0;
+            background: var(--light-violet);
+            border-radius: 20px;
+            padding: 50px;
+        }
+
+        .faq-section h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: var(--primary);
+        }
+
+        .faq-grid {
+            display: grid;
+            gap: 25px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            border-radius: 12px;
+            padding: 25px;
+            border-left: 4px solid var(--primary);
+        }
+
+        .faq-item h4 {
+            color: var(--primary);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+
+        .faq-item p {
+            color: var(--text);
+            opacity: 0.9;
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--card-bg);
+            padding: 50px 0 30px;
+            margin-top: 80px;
+            border-top: 1px solid var(--border);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+
+        .footer-logo {
+            height: 40px;
+            margin-bottom: 20px;
+        }
+
+        .footer-column h4 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .footer-links a {
+            color: var(--text);
+            text-decoration: none;
+            transition: all 0.3s;
+            padding: 5px 0;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background: var(--light-violet);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .social-link:hover {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .copyright {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid var(--border);
+            color: var(--text);
+            opacity: 0.7;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 20px;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .contact-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .contact-card {
+                padding: 30px 20px;
+            }
+            
+            .faq-section, .dev-team-section {
+                padding: 30px 20px;
+            }
+            
+            .team-grid, .dev-team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body data-theme="light">
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">
+            <img src="assets/images/logo.png" alt="Lumina Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="newindex.html"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="front/socialcase.php"><i class="fas fa-hands-helping"></i> Get Help</a></li>
+            <li class="dropdown">
+                <a href="front/jobdepartment.php" class="dropdown-toggle"><i class="fas fa-briefcase"></i> Jobs<i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="jobdepartment.php#employment-service"><i class="fas fa-search"></i> Job Search</a></li>
+                    <li><a href="jobdepartment.php#associations"><i class="fas fa-users"></i> Associations</a></li>
+                    <li><a href="jobdepartment.php#application-tracking"><i class="fas fa-tasks"></i> Application Tracking</a></li>
+                </ul>
+            </li>
+            <li><a href="event.php"><i class="fas fa-calendar-alt"></i> Events</a></li>
+            <li><a href="forum.php"><i class="fas fa-comments"></i> Forum</a></li>
+            <li><a href="contact.html" class="active"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <button class="theme-toggle" id="theme-toggle">
+                <i class="fas fa-sun"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Contact Content -->
+    <div class="contact-container">
+        <div class="contact-header">
+            <h1>Contact Lumina</h1>
+            <p>We're here to support your journey. Whether you need assistance, have questions, or want to collaborate, our team is ready to help you succeed.</p>
+        </div>
+
+        <!-- Contact Methods -->
+        <div class="contact-methods-grid">
+            <!-- Location Card -->
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <h3>Visit Our Office</h3>
+                <p>Drop by our headquarters for in-person support and guidance.</p>
+                <div class="contact-details">
+                    <div class="contact-detail">
+                        <i class="fas fa-building"></i>
+                        <span>Lumina Support Center</span>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-location-dot"></i>
+                        <span>123 Al Ghazela , Ariana Soghra , Tunis</span>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-city"></i>
+                        <span>Community District, City 10001</span>
+                    </div>
+                    <div class="contact-detail">
+                        <i class="fas fa-clock"></i>
+                        <span>Mon-Fri: 9:00 AM - 6:00 PM</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Phone Card -->
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-phone-alt"></i>
+                </div>
+                <h3>Call Us Directly</h3>
+                <p>Speak with our support team for immediate assistance.</p>
+                <div class="contact-details">
+                    <div class="contact-detail">
+                        <a href="tel:+1234567890">
+                            <i class="fas fa-phone"></i>
+                            <span>General Support: +(216) 54 271 233</span>
+                        </a>
+                    </div>
+                
+                </div>
+            </div>
+
+            <!-- Email Card -->
+            <div class="contact-card">
+                <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                </div>
+                <h3>Email Our Teams</h3>
+                <p>Send us a message and we'll respond within 24 hours.</p>
+                <div class="contact-details">
+                    <div class="contact-detail">
+                        <a href="mailto:support@lumina.org">
+                            <i class="fas fa-life-ring"></i>
+                            <span>General Support: lumina@socialservice.com</span>
+                        </a>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+
+        
+
+        <!-- Development Team Section -->
+        <div class="dev-team-section">
+            <h2>👥 Development Team </h2>
+            <div class="dev-team-grid">
+                <div class="dev-team-member">
+                    <div class="dev-avatar">
+                        <i class="fas fa-user-cog"></i>
+                    </div>
+                    <h4>Oumaima</h4>
+                    <p class="dev-role">User Module Lead</p>
+                    <div class="dev-module">
+                        <h5>Responsibilities</h5>
+                        <p>User authentication, profiles, registration, login system, user management dashboard. Provides shared authentication for all modules.</p>
+                    </div>
+                </div>
+                
+                <div class="dev-team-member">
+                    <div class="dev-avatar">
+                        <i class="fas fa-calendar-alt"></i>
+                    </div>
+                    <h4>Mariem</h4>
+                    <p class="dev-role">Events Module Lead</p>
+                    <div class="dev-module">
+                        <h5>Responsibilities</h5>
+                        <p>Event creation, calendar management, volunteer coordination, event management system with scheduling and notifications.</p>
+                    </div>
+                </div>
+                
+                <div class="dev-team-member">
+                    <div class="dev-avatar">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h4>Menna</h4>
+                    <p class="dev-role">Social Cases Department Lead</p>
+                    <div class="dev-module">
+                        <h5>Responsibilities</h5>
+                        <p>Case submission forms, case management system, priority assignment algorithms, case tracking and follow-up systems.</p>
+                    </div>
+                </div>
+                
+                <div class="dev-team-member">
+                    <div class="dev-avatar">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h4>Nawress</h4>
+                    <p class="dev-role">Jobs Department Lead</p>
+                    <div class="dev-module">
+                        <h5>Responsibilities</h5>
+                        <p>Job listings database, employment matching algorithms, employer profiles, job application tracking and management system.</p>
+                    </div>
+                </div>
+                
+                <div class="dev-team-member">
+                    <div class="dev-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <h4>Ilyess</h4>
+                    <p class="dev-role">AI & Feedback Systems</p>
+                    <div class="dev-module">
+                        <h5>Responsibilities</h5>
+                        <p>Complaints & reviews system, feedback management, complaint tracking, AI-powered assistance chatbot implementation.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="faq-section">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>What services do you offer?</h4>
+                    <p>We provide job placement assistance, community support, career counseling, skill development workshops, and networking opportunities.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>How quickly will I receive a response?</h4>
+                    <p>We aim to respond to all inquiries within 24 hours during business days. Emergency support is available within 2 hours.</p>
+                </div>
+                <div class="faq-item">
+                    <h4>Do you offer in-person consultations?</h4>
+                    <p>Yes, you can visit our office during business hours. We recommend booking an appointment for specialized services.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+        
+        <div class="copyright">
+            © 2023 Lumina Community Support. All rights reserved. | Designed with <i class="fas fa-heart" style="color: var(--primary);"></i> for our community
+        </div>
+
+
+    <script>
+        // Theme Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+        const themeIcon = themeToggle.querySelector('i');
+        
+        const savedTheme = localStorage.getItem('theme') || 
+                          (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        
+        body.setAttribute('data-theme', savedTheme);
+        updateThemeIcon(savedTheme);
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+        
+        function updateThemeIcon(theme) {
+            if (theme === 'dark') {
+                themeIcon.className = 'fas fa-moon';
+            } else {
+                themeIcon.className = 'fas fa-sun';
+            }
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 100,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add hover effect to contact cards on mobile
+        document.querySelectorAll('.contact-card').forEach(card => {
+            card.addEventListener('touchstart', function() {
+                this.classList.add('hover-effect');
+            });
+            
+            card.addEventListener('touchend', function() {
+                setTimeout(() => {
+                    this.classList.remove('hover-effect');
+                }, 300);
+            });
+        });
+    </script>
+</body>
+</html>

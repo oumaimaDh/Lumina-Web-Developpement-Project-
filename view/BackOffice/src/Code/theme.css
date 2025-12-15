@@ -1,0 +1,479 @@
+/* ================= THEME SYSTEM ================= */
+
+/* Base theme variables */
+:root {
+    --accent-primary: #3B82F6;
+    --accent-secondary: #2563EB;
+    --accent-gradient: linear-gradient(135deg, #3B82F6, #2563EB);
+}
+
+/* Enhanced Dark theme with better visuals */
+body.theme-dark {
+    --bg-primary: #0f172a;          /* Darker background */
+    --bg-secondary: #1e293b;         /* Card backgrounds */
+    --bg-tertiary: #334155;          /* Sidebar/inputs */
+    --bg-sidebar: #1e293b;           /* Sidebar */
+    --text-primary: #f8fafc;         /* Primary text */
+    --text-secondary: #cbd5e1;       /* Secondary text */
+    --text-muted: #94a3b8;           /* Muted text */
+    --border-color: #475569;         /* Borders */
+    --border-hover: #64748b;         /* Border hover */
+    --card-bg: #1e293b;              /* Card background */
+    --card-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    --card-shadow-hover: 0 20px 40px rgba(0, 0, 0, 0.4);
+    
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+}
+
+/* Dashboard container in dark theme */
+body.theme-dark .dashboard-container {
+    background: linear-gradient(135deg, var(--bg-primary) 0%, #111827 100%);
+}
+
+/* Sidebar enhancements */
+body.theme-dark .sidebar {
+    background: linear-gradient(180deg, var(--bg-sidebar) 0%, #0f172a 100%) !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+}
+
+body.theme-dark .sidebar-bg-blur {
+    background: radial-gradient(circle at 20% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
+}
+
+/* Navigation items in dark theme */
+body.theme-dark .nav-item {
+    background: rgba(255, 255, 255, 0.03) !important;
+    color: var(--text-secondary) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+body.theme-dark .nav-item:hover {
+    background: rgba(255, 255, 255, 0.08) !important;
+    color: var(--text-primary) !important;
+    border-color: rgba(59, 130, 246, 0.3);
+    transform: translateX(5px);
+}
+
+body.theme-dark .nav-item.active {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)) !important;
+    color: white !important;
+    border-color: var(--accent-primary);
+    box-shadow: 0 5px 15px rgba(59, 130, 246, 0.3);
+    position: relative;
+}
+
+body.theme-dark .nav-item.active::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4px;
+    height: 60%;
+    background: white;
+    border-radius: 0 2px 2px 0;
+}
+
+/* Main content area */
+body.theme-dark .main-content {
+    background: transparent;
+    color: var(--text-primary);
+}
+
+/* Cards in dark theme */
+body.theme-dark .event-card,
+body.theme-dark .settings-card,
+body.theme-dark .stat-card,
+body.theme-dark .widget-card,
+body.theme-dark .theme-option {
+    background: var(--card-bg) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: var(--card-shadow) !important;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+body.theme-dark .event-card:hover,
+body.theme-dark .settings-card:hover,
+body.theme-dark .stat-card:hover,
+body.theme-dark .widget-card:hover,
+body.theme-dark .theme-option:hover {
+    border-color: var(--border-hover) !important;
+    box-shadow: var(--card-shadow-hover) !important;
+    transform: translateY(-2px);
+}
+
+/* Dashboard header */
+body.theme-dark .dashboard-header {
+    background: rgba(30, 41, 59, 0.8) !important;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border-color);
+}
+
+body.theme-dark .header-logo .logo-image {
+    filter: brightness(1.2) contrast(1.1);
+}
+
+/* Search container */
+body.theme-dark .search-container {
+    background: rgba(15, 23, 42, 0.8) !important;
+    border: 1px solid var(--border-color) !important;
+    backdrop-filter: blur(10px);
+}
+
+body.theme-dark .search-input {
+    background: transparent !important;
+    color: var(--text-primary) !important;
+}
+
+body.theme-dark .search-input::placeholder {
+    color: var(--text-muted) !important;
+}
+
+/* Tables in dark theme */
+body.theme-dark .table-container {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+body.theme-dark table {
+    color: var(--text-primary) !important;
+}
+
+body.theme-dark thead {
+    background: rgba(30, 41, 59, 0.8) !important;
+    border-bottom: 2px solid var(--border-color) !important;
+}
+
+body.theme-dark tbody tr {
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+body.theme-dark tbody tr:hover {
+    background: rgba(59, 130, 246, 0.1) !important;
+}
+
+/* Form elements */
+body.theme-dark input,
+body.theme-dark textarea,
+body.theme-dark select {
+    background: rgba(15, 23, 42, 0.8) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+    backdrop-filter: blur(5px);
+}
+
+body.theme-dark input:focus,
+body.theme-dark textarea:focus,
+body.theme-dark select:focus {
+    border-color: var(--accent-primary) !important;
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2) !important;
+    background: rgba(15, 23, 42, 0.9) !important;
+}
+
+/* Buttons in dark theme */
+body.theme-dark .btn-primary {
+    background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary)) !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: 0 4px 15px rgba(59, 130, 246, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+body.theme-dark .btn-primary:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 25px rgba(59, 130, 246, 0.4) !important;
+}
+
+body.theme-dark .btn-secondary {
+    background: rgba(255, 255, 255, 0.05) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+    backdrop-filter: blur(5px);
+}
+
+body.theme-dark .btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-color: var(--accent-primary) !important;
+}
+
+/* Status badges */
+body.theme-dark .status-badge {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+body.theme-dark .status-badge.upcoming {
+    background: rgba(59, 130, 246, 0.2) !important;
+    color: #60a5fa !important;
+    border-color: rgba(59, 130, 246, 0.3) !important;
+}
+
+body.theme-dark .status-badge.in-progress {
+    background: rgba(168, 85, 247, 0.2) !important;
+    color: #c084fc !important;
+    border-color: rgba(168, 85, 247, 0.3) !important;
+}
+
+body.theme-dark .status-badge.completed {
+    background: rgba(34, 197, 94, 0.2) !important;
+    color: #4ade80 !important;
+    border-color: rgba(34, 197, 94, 0.3) !important;
+}
+
+/* Modals in dark theme */
+body.theme-dark .modal-content {
+    background: var(--card-bg) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5) !important;
+}
+
+body.theme-dark .modal-header {
+    border-bottom: 1px solid var(--border-color) !important;
+    background: rgba(15, 23, 42, 0.8) !important;
+}
+
+/* Help section in sidebar */
+body.theme-dark .help-section {
+    background: linear-gradient(135deg, rgba(30, 41, 59, 0.8), rgba(15, 23, 42, 0.9)) !important;
+    border: 1px solid var(--border-color) !important;
+    backdrop-filter: blur(10px);
+}
+
+body.theme-dark .help-title {
+    color: var(--text-primary) !important;
+}
+
+body.theme-dark .help-text {
+    color: var(--text-secondary) !important;
+}
+
+/* User menu and notification panel */
+body.theme-dark #notificationPanel,
+body.theme-dark #userMenu {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: var(--card-shadow) !important;
+    backdrop-filter: blur(10px);
+}
+
+/* Statistics cards */
+body.theme-dark .stat-item {
+    background: rgba(15, 23, 42, 0.8) !important;
+    border: 1px solid var(--border-color) !important;
+    backdrop-filter: blur(10px);
+}
+
+body.theme-dark .stat-value {
+    color: var(--text-primary) !important;
+}
+
+body.theme-dark .stat-label {
+    color: var(--text-secondary) !important;
+}
+
+/* Quote cards */
+body.theme-dark .quote-card {
+    background: rgba(30, 41, 59, 0.8) !important;
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(10px);
+}
+
+/* Charts grid */
+body.theme-dark .chart-wrapper {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+body.theme-dark .chart-header {
+    border-bottom: 1px solid var(--border-color) !important;
+    background: rgba(15, 23, 42, 0.8) !important;
+}
+
+/* Kanban board */
+body.theme-dark .kanban-column {
+    background: var(--card-bg) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+body.theme-dark .column-header {
+    background: rgba(15, 23, 42, 0.8) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+/* Task cards */
+body.theme-dark .task-card {
+    background: rgba(15, 23, 42, 0.8) !important;
+    border: 1px solid var(--border-color) !important;
+    backdrop-filter: blur(5px);
+}
+
+/* Scrollbar styling for dark theme */
+body.theme-dark::-webkit-scrollbar {
+    width: 10px;
+}
+
+body.theme-dark::-webkit-scrollbar-track {
+    background: rgba(15, 23, 42, 0.8);
+}
+
+body.theme-dark::-webkit-scrollbar-thumb {
+    background: var(--border-color);
+    border-radius: 5px;
+}
+
+body.theme-dark::-webkit-scrollbar-thumb:hover {
+    background: var(--border-hover);
+}
+
+/* Selection color */
+body.theme-dark ::selection {
+    background: rgba(59, 130, 246, 0.3);
+    color: white;
+}
+
+/* Links in dark theme */
+body.theme-dark a {
+    color: #60a5fa !important;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+body.theme-dark a:hover {
+    color: #93c5fd !important;
+    text-decoration: underline;
+}
+
+/* Toggle switches */
+body.theme-dark .switch {
+    background: var(--border-color) !important;
+}
+
+body.theme-dark .switch .slider {
+    background: var(--bg-tertiary) !important;
+}
+
+body.theme-dark .switch input:checked + .slider {
+    background: var(--accent-primary) !important;
+}
+
+/* Calendar styling */
+body.theme-dark .calendar-header {
+    background: rgba(15, 23, 42, 0.8) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+body.theme-dark .calendar-day {
+    border: 1px solid var(--border-color) !important;
+    color: var(--text-primary) !important;
+}
+
+body.theme-dark .calendar-day.today {
+    background: rgba(59, 130, 246, 0.2) !important;
+    color: #60a5fa !important;
+}
+
+body.theme-dark .calendar-day.has-event {
+    background: rgba(34, 197, 94, 0.2) !important;
+    color: #4ade80 !important;
+}
+
+/* Accent color glow effects */
+body.theme-dark .nav-star .star-icon,
+body.theme-dark .help-star {
+    filter: drop-shadow(0 0 8px rgba(59, 130, 246, 0.5));
+}
+
+/* Dashboard settings section */
+body.theme-dark .settings-section {
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+body.theme-dark .settings-section h3 {
+    color: var(--text-primary) !important;
+    border-left: 4px solid var(--accent-primary) !important;
+    padding-left: 10px !important;
+}
+
+/* Form labels */
+body.theme-dark label {
+    color: var(--text-primary) !important;
+}
+
+body.theme-dark .form-text.text-muted {
+    color: var(--text-muted) !important;
+}
+
+/* Dropdown menus */
+body.theme-dark .filter-select,
+body.theme-dark .period-select {
+    background: rgba(15, 23, 42, 0.8) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+    backdrop-filter: blur(5px);
+}
+
+body.theme-dark .filter-select option,
+body.theme-dark .period-select option {
+    background: var(--card-bg) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Tooltips */
+body.theme-dark [title]:hover::after {
+    background: var(--card-bg) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-color) !important;
+    box-shadow: var(--card-shadow) !important;
+}
+
+/* Icons in dark theme */
+body.theme-dark i,
+body.theme-dark .fas,
+body.theme-dark .far {
+    color: var(--text-secondary) !important;
+}
+
+body.theme-dark .nav-icon,
+body.theme-dark .search-icon {
+    color: var(--text-secondary) !important;
+}
+
+body.theme-dark .nav-item:hover i,
+body.theme-dark .nav-item.active i {
+    color: white !important;
+}
+
+/* Loading states */
+body.theme-dark .loading,
+body.theme-dark .spinner {
+    border-color: var(--border-color) !important;
+    border-top-color: var(--accent-primary) !important;
+}
+
+/* Empty states */
+body.theme-dark .empty-state {
+    color: var(--text-muted) !important;
+    background: rgba(15, 23, 42, 0.5) !important;
+    border: 1px solid var(--border-color) !important;
+}
+
+/* Responsive adjustments for dark theme */
+@media (max-width: 768px) {
+    body.theme-dark .sidebar {
+        box-shadow: 3px 0 10px rgba(0, 0, 0, 0.3);
+    }
+    
+    body.theme-dark .dashboard-header {
+        backdrop-filter: blur(15px);
+    }
+}

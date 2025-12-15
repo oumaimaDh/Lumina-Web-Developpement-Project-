@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile - Lumina</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Back to Home Button -->
+  <div class="back-home">
+    <a href="newindex.html" class="back-btn">
+      <i class="fas fa-arrow-left"></i>
+      Back to Home
+    </a>
+  </div>
+
+  <!-- Main Auth Container -->
+  <div class="auth-container">
+
+    <!-- Brand Panel (نفس اللي في الـ login) -->
+    <div class="brand-panel">
+      <div class="brand-logo">
+        <i class="fas fa-star"></i>
+        <h1>Lumina</h1>
+      </div>
+      <div class="brand-content">
+        <h2>Your Profile</h2>
+        <p>Manage your personal information and keep your account secure with ease.</p>
+        
+        <div class="brand-features">
+          <div class="feature">
+            <i class="fas fa-user-shield"></i>
+            <span>Secure & Protected</span>
+          </div>
+          <div class="feature">
+            <i class="fas fa-edit"></i>
+            <span>Easy to Update</span>
+          </div>
+          <div class="feature">
+            <i class="fas fa-heart"></i>
+            <span>Made with Care</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Profile Form Panel -->
+    <div class="form-panel">
+      <div class="form-header">
+        <h2 class="form-title">My Profile</h2>
+        <p class="form-subtitle">Hello, <strong id="welcomeName">User</strong>! Here's your info</p>
+      </div>
+
+      <!-- Personal Information -->
+      <div class="form-section">
+        <h3 class="section-title"><i class="fas fa-user-circle"></i> Account Details</h3>
+        
+        <div class="form-group">
+          <label>User ID</label>
+          <input type="text" id="userIdValue" readonly>
+        </div>
+
+        <div class="form-group">
+          <label>Username</label>
+          <input type="text" id="usernameValue" readonly>
+        </div>
+
+        <div class="form-group">
+          <label>Email Address</label>
+          <input type="email" id="emailValue" readonly>
+        </div>
+
+      </div>
+
+      <!-- Change Password Section -->
+      <div class="form-section">
+        <h3 class="section-title"><i class="fas fa-lock"></i> Change Password</h3>
+        <form id="changePasswordForm">
+          <div class="form-group">
+            <label for="currentPassword">Current Password</label>
+            <input type="password" id="currentPassword" placeholder="Enter current password" required>
+          </div>
+
+          <div class="form-group">
+            <label for="newPassword">New Password</label>
+            <input type="password" id="newPassword" placeholder="Enter new password" required>
+            <div class="feedback" id="newPasswordFeedback"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="confirmNewPassword">Confirm New Password</label>
+            <input type="password" id="confirmNewPassword" placeholder="Confirm new password" required>
+            <div class="feedback" id="confirmNewPasswordFeedback"></div>
+          </div>
+
+          <button type="submit" class="btn">Update Password</button>
+          <div id="passwordChangeMessage"></div>
+        </form>
+      </div>
+
+      <div class="alt-link">
+        <a href="#" onclick="authManager.logout()">
+          <i class="fas fa-sign-out-alt"></i> Logout from account
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="auth.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const user = window.authManager?.getUser() || JSON.parse(localStorage.getItem('currentUser'));
+      
+      if (!user) {
+        alert('Please login first');
+        window.location.href = 'login.html';
+        return;
+      }
+
+      // Fill user data
+      document.getElementById('welcomeName').textContent = user.username;
+      document.getElementById('userIdValue').value = user.user_id || 'N/A';
+      document.getElementById('usernameValue').value = user.username || 'N/A';
+      document.getElementById('emailValue').value = user.email || 'N/A';
+      document.getElementById('roleValue').value = user.role || 'user';
+
+      // Password Validation
+      const newPass = document.getElementById('newPassword');
+      const confirmPass = document.getElementById('confirmNewPassword');
+      const feedback1 = document.getElementById('newPasswordFeedback');
+      const feedback2 = document.getElementById('confirmNewPasswordFeedback');
+
+      function validatePassword(p) {
+        return /^(?=.*[0-9]).{6,}$/.test(p);
+      }
+
+      newPass.addEventListener('input', () => {
+        if (newPass.value === '') {
+          feedback1.textContent = '';
+          feedback1.className = 'feedback';
+        } else if (validatePassword(newPass.value)) {
+          feedback1.textContent = 'Strong password';
+          feedback1.className = 'feedback valid';
+        } else {
+          feedback1.textContent = 'Min 6 chars + 1 number';
+          feedback1.className = 'feedback invalid';
+        }
+      });
+
+      confirmPass.addEventListener('input', () => {
+        if (confirmPass.value === newPass.value && confirmPass.value !== '') {
+          feedback2.textContent = 'Passwords match';
+          feedback2.className = 'feedback valid';
+        } else if (confirmPass.value !== '') {
+          feedback2.textContent = 'Passwords do not match';
+          feedback2.className = 'feedback invalid';
+        } else {
+          feedback2.textContent = '';
+          feedback2.className = 'feedback';
+        }
+      });
+
+      // Submit Form
+      document.getElementById('changePasswordForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const current = document.getElementById('currentPassword').value;
+        const newP = newPass.value;
+        const confirm = confirmPass.value;
+        const msg = document.getElementById('passwordChangeMessage');
+
+        if (!validatePassword(newP)) return alert('Weak password!');
+        if (newP !== confirm) return alert('Passwords do not match!');
+
+        const formData = new FormData();
+        formData.append('currentPassword', current);
+        formData.append('newPassword', newP);
+        formData.append('userId', user.user_id);
+
+        try {
+          const res = await fetch('changepwd.php', {
+            method: 'POST',
+            body: formData
+          });
+          const text = await res.text();
+
+          if (text.includes('SUCCESS')) {
+            msg.innerHTML = '<div style="color:var(--success); margin-top:10px;">Password updated successfully!</div>';
+            e.target.reset();
+            feedback1.textContent = feedback2.textContent = '';
+          } else {
+            msg.innerHTML = '<div style="color:var(--error); margin-top:10px;">' + text.replace('ERROR:', '') + '</div>';
+          }
+        } catch (err) {
+          msg.innerHTML = '<div style="color:var(--error);">Network error</div>';
+        }
+      });
+    });
+  </script>
+</body>
+</html>

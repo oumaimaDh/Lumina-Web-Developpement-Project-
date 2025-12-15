@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <svg class="star-icon" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z"/>
+                </svg>
+                <span class="logo-text">Lumina</span>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="#dashboard" class="nav-item active" data-tab="dashboard">
+                    <i class="fas fa-home"></i>
+                    <span>Dashboard</span>
+                </a>
+                <a href="#social" class="nav-item" data-tab="social">
+                    <i class="fas fa-heart"></i>
+                    <span>Social Cases </span>
+                </a>
+                <a href="#associations" class="nav-item" data-tab="associations">
+                    <i class="fas fa-users"></i>
+                    <span>Associations</span>
+                </a>
+                <a href="#jobs" class="nav-item" data-tab="jobs">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Jobs</span>
+                </a>
+                <a href="#forum" class="nav-item" data-tab="forum">
+                    <i class="fas fa-comments"></i>
+                    <span>Forum</span>
+                </a>
+                <a href="#settings" class="nav-item" data-tab="settings">
+                    <i class="fas fa-cog"></i>
+                    <span>Settings</span>
+                </a>
+            </nav>
+
+            <!-- Version Info -->
+            <div class="version-info">
+                <p>Version 23.0.0</p>
+                <p class="version-date">2025</p>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header with Logo -->
+            <header class="dashboard-header">
+                <!-- Logo -->
+                <div class="header-logo">
+                    <img src="logo.png.png" 
+                         alt="Lumina Logo" 
+                         class="logo-image">
+                </div>
+
+                <!-- Search Bar -->
+                <div class="search-container">
+                    <i class="fas fa-search search-icon"></i>
+                    <input type="text" placeholder="Search jobs , associations.." class="search-input" id="globalSearch">
+                </div>
+
+                <!-- Date -->
+                <div class="header-date">
+                    <p id="currentDate"></p>
+                </div>
+
+                <!-- Actions -->
+                <div class="header-actions">
+                    <!-- Notifications -->
+                    <button class="icon-btn" onclick="toggleNotifications()">
+                        <i class="fas fa-bell"></i>
+                        <span class="notification-dot" id="notificationDot"></span>
+                    </button>
+
+                    <!-- User Profile -->
+                    <div class="user-profile" onclick="toggleUserMenu()">
+                        <div class="user-info">
+                            <p class="user-name">Stella Walton</p>
+                            <p class="user-role">Administrator</p>
+                        </div>
+                        <div class="user-avatar">
+                            <i class="fas fa-user"></i>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+        
+
+    <script src="script.js"></script>
+</body>
+</html>

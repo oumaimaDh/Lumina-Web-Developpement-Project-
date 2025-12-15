@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <title>Create Profile</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <div class="auth-container">
+    <!-- Brand Panel -->
+    <div class="brand-panel">
+      <div class="brand-logo">
+        <i class="fas fa-star"></i>
+        <h1>Lumina</h1>
+      </div>
+      <div class="brand-content">
+        <h2>Join Our Community</h2>
+        <p>Create your account to connect with volunteers, associations, and help seekers.</p>
+        
+        <!-- Card Carousel - BIGGER -->
+        <div class="brand-carousel">
+          <div class="cards">
+            <input type="radio" id="radio-1" name="radio-card" checked>
+            <article class="card" style="--angle:4deg">
+              <img class="card-img" src="assets/images/heart.jpg">
+              <div class="card-data">
+                <span class="card-num">1/3</span>
+                <h2>Join Our Network</h2>
+                <p>Connect with thousands of volunteers and organizations across Tunisia.</p>
+                <footer>
+                  <label for="radio-3" aria-label="Previous">&#10094;</label>
+                  <label for="radio-2" aria-label="Next">&#10095;</label>
+                </footer>
+              </div>
+            </article>
+
+            <input type="radio" id="radio-2" name="radio-card">
+            <article class="card" style="--angle:-8deg">
+              <img class="card-img" src="assets/images/help.jpg">
+              <div class="card-data">
+                <span class="card-num">2/3</span>
+                <h2>Make an Impact</h2>
+                <p>Your skills and time can create real change in communities.</p>
+                <footer>
+                  <label for="radio-1" aria-label="Previous">&#10094;</label>
+                  <label for="radio-3" aria-label="Next">&#10095;</label>
+                </footer>
+              </div>
+            </article>
+
+            <input type="radio" id="radio-3" name="radio-card">
+            <article class="card" style="--angle:-7deg">
+              <img class="card-img" src="assets/images/smile.jpg">
+              <div class="card-data">
+                <span class="card-num">3/3</span>
+                <h2>Find Support</h2>
+                <p>Connect with people ready to help and support your cause.</p>
+                <footer>
+                  <label for="radio-2" aria-label="Previous">&#10094;</label>
+                  <label for="radio-1" aria-label="Next">&#10095;</label>
+                </footer>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form Panel - UNTOUCHED -->
+    <div class="form-panel">
+      <div class="form-header">
+        <h2 class="form-title">Create Account</h2>
+        <p class="form-subtitle">Get started in minutes</p>
+      </div>
+
+      <form id="registerForm" method="post" action="register.php">
+        <!-- 2-column layout for compact form -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Your full name">
+            <div class="feedback" id="nameFeedback"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="email@example.com">
+            <div class="feedback" id="emailFeedback"></div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Create password">
+            <div class="feedback" id="passwordFeedback"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="confirmPassword">Confirm</label>
+            <input type="password" id="confirmPassword" placeholder="Confirm password">
+            <div class="feedback" id="confirmFeedback"></div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="birthday">Birthday</label>
+            <input type="date" id="birthday">
+            <div class="feedback" id="ageFeedback"></div>
+          </div>
+
+          
+        </div>
+
+        <!-- Gender toggle -->
+        <div class="gender-toggle-container">
+          <label class="gender-toggle-label">Gender</label>
+          <div class="gender-toggle-wrapper">
+            <div class="toggle-container">
+              <input class="gender-toggle" id="genderToggle" type="checkbox" hidden name="gender" value="Female">
+              <label class="toggle-slider" for="genderToggle"></label>
+            </div>
+            <div class="gender-value female-active" id="genderValue">Female</div>
+          </div>
+        </div>
+
+        <!-- Bio -->
+        <div class="form-group">
+          <label for="bio">Bio (Optional)</label>
+          <textarea id="bio" rows="2" placeholder="Brief introduction..."></textarea>
+        </div>
+
+        <button type="submit" class="btn">Create Account</button>
+
+        <p class="alt-link">
+          Already have an account? <a href="login.html">Login here</a>
+        </p>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Script pour mettre à jour la valeur du genre
+    const genderToggle = document.getElementById('genderToggle');
+    const genderValue = document.getElementById('genderValue');
+    
+    genderToggle.addEventListener('change', function() {
+      if (this.checked) {
+        this.value = "Male";
+        genderValue.textContent = "Male";
+        genderValue.className = "gender-value male-active";
+      } else {
+        this.value = "Female";
+        genderValue.textContent = "Female";
+        genderValue.className = "gender-value female-active";
+      }
+    });
+  </script>
+  <script src="register.js"></script>
+</body>
+</html>

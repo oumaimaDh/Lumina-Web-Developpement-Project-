@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina - Community Insights & Social Impact in Tunisia</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <span class="logo-icon">🌟</span>
+                <span class="logo-text">Lumina</span>
+            </div>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#initiatives" class="nav-link">Initiatives</a></li>
+                <li><a href="#community" class="nav-link">Community</a></li>
+                <li><a href="#events" class="nav-link">Events</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="btn-post" onclick="openPostModal()">+ Post</button>
+                <button class="btn-login">Log In</button>
+            </div>
+
+            <button class="mobile-menu-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+    <section class="hero" id="home">
+        <div class="hero-blob blob-1"></div>
+        <div class="hero-blob blob-2"></div>
+        <div class="hero-blob blob-3"></div>
+        
+        <div class="hero-content">
+            <div class="hero-badge">
+                <span>🇹🇳 Made in Tunisia, For Tunisia</span>
+            </div>
+            <h1 class="hero-title">
+                Welcome to Your Community of <span class="gradient-text">Change-Makers</span>
+            </h1>
+            <p class="hero-subtitle">
+                Join hundreds of passionate Tunisians making a real difference. Discover initiatives, connect with volunteers, and be part of something bigger!
+            </p>
+            <div class="hero-buttons">
+                <button class="btn-primary">Explore Initiatives 🚀</button>
+                <button class="btn-secondary">How It Works ✨</button>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Active Volunteers</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">150+</div>
+                    <div class="stat-label">Community Projects</div>
+                </div>
+                <div class="stat">
+                    <div class="stat-number">25+</div>
+                    <div class="stat-label">Cities Across Tunisia</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">💙 About Us</div>
+                <h2 class="section-title">We're Here to Make Impact Easy</h2>
+                <p class="section-subtitle">
+                    Lumina connects passionate people with meaningful projects. Whether you want to volunteer, start an initiative, or just stay inspired—we've got you covered!
+                </p>
+            </div>
+
+            <div class="about-cards">
+                <div class="about-card">
+                    <div class="card-icon">🎯</div>
+                    <h3>Our Mission</h3>
+                    <p>To create a vibrant community where every Tunisian can easily find and join initiatives that match their passion and skills.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">✨</div>
+                    <h3>Our Vision</h3>
+                    <p>A Tunisia where social impact is accessible to everyone, and communities thrive through collaboration and positive action.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">💪</div>
+                    <h3>Our Values</h3>
+                    <p>Transparency, inclusivity, and empowerment. We believe in the power of community and the impact of small actions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">🌈 What We Offer</div>
+                <h2 class="section-title">Everything You Need to Make a Difference</h2>
+                <p class="section-subtitle">
+                    From discovering new initiatives to connecting with like-minded people, Lumina makes social impact simple and fun!
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-number">01</div>
+                    <div class="service-icon">🔍</div>
+                    <h3>Discover Initiatives</h3>
+                    <p>Browse through dozens of active projects in your area. From beach cleanups to educational programs, there's something for everyone!</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-number">02</div>
+                    <div class="service-icon">🤝</div>
+                    <h3>Connect & Collaborate</h3>
+                    <p>Meet amazing people who share your values. Build friendships, exchange ideas, and create lasting impact together.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-number">03</div>
+                    <div class="service-icon">📅</div>
+                    <h3>Join Events</h3>
+                    <p>Stay updated with upcoming volunteer events, workshops, and community gatherings happening near you.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-number">04</div>
+                    <div class="service-icon">💡</div>
+                    <h3>Start Your Own</h3>
+                    <p>Have an idea? Launch your own initiative and rally your community around causes you're passionate about.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-number">05</div>
+                    <div class="service-icon">📊</div>
+                    <h3>Track Your Impact</h3>
+                    <p>See the real difference you're making. Track hours volunteered, projects completed, and lives touched.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-number">06</div>
+                    <div class="service-icon">🎉</div>
+                    <h3>Celebrate Together</h3>
+                    <p>Share your stories, celebrate wins, and inspire others to join the movement for positive change.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Projects Section -->
+    <section class="projects-section" id="initiatives">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">✨ Happening Now</div>
+                <h2 class="section-title">Join These Amazing Initiatives!</h2>
+                <p class="section-subtitle">
+                    These projects are actively looking for enthusiastic volunteers like you. Pick one and make a difference today!
+                </p>
+            </div>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1758599668299-beebedfabf7b?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Neighborhood Cleanup">
+                        <div class="project-badge">🌊 Environment</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Neighborhood Cleanup</h3>
+                        <p>Local residents joined forces to clean the shoreline in Sousse.</p>
+                        <div class="project-meta">
+                            <span class="meta-item">📍 Sousse</span>
+                            <span class="meta-item">👥 23 volunteers</span>
+                        </div>
+                        <button class="btn-join">Join Initiative →</button>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1668934805599-91f032937f14?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Street Library Initiative">
+                        <div class="project-badge">📚 Education</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Street Library Initiative</h3>
+                        <p>Volunteers set up open book-sharing stands in public squares.</p>
+                        <div class="project-meta">
+                            <span class="meta-item">📍 Tunis</span>
+                            <span class="meta-item">👥 18 volunteers</span>
+                        </div>
+                        <button class="btn-join">Join Initiative →</button>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image">
+                        <img src="https://images.unsplash.com/photo-1654343532574-53e699fe0cd8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=800" alt="Kids Activity Day">
+                        <div class="project-badge">🎨 Youth</div>
+                    </div>
+                    <div class="project-content">
+                        <h3>Kids Activity Day</h3>
+                        <p>A full-day program of games and learning activities for children.</p>
+                        <div class="project-meta">
+                            <span class="meta-item">📍 Sfax</span>
+                            <span class="meta-item">👥 31 volunteers</span>
+                        </div>
+                        <button class="btn-join">Join Initiative →</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Feed Section -->
+    <section class="feed-section" id="community">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">💬 Community Buzz</div>
+                <h2 class="section-title">What's Happening in Our Community</h2>
+                <p class="section-subtitle">
+                    See what your neighbors are up to and join the conversation!
+                </p>
+                <button class="btn-create-post" onclick="openPostModal()">
+                    <span>✏️</span>
+                    <span>Share Something with the Community!</span>
+                </button>
+            </div>
+
+            <div class="feed-grid">
+                <div class="feed-post">
+                    <div class="post-header">
+                        <img src="https://images.unsplash.com/photo-1639149888905-fb39731f2e6c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=100" alt="Ons Marzouki" class="post-avatar">
+                        <div class="post-info">
+                            <div class="post-name">Ons Marzouki</div>
+                            <div class="post-time">2 hours ago</div>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        We are planning a new awareness event in Nabeul! Suggestions welcome. Would love to have you join us!
+                    </div>
+                    <div class="post-actions">
+                        <button class="post-action" onclick="likePost(this)">
+                            <span class="action-icon">❤️</span>
+                            <span class="action-count">12</span>
+                        </button>
+                        <button class="post-action">
+                            <span class="action-icon">💬</span>
+                            <span class="action-count">5</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="feed-post">
+                    <div class="post-header">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=100" alt="Rami Toumi" class="post-avatar">
+                        <div class="post-info">
+                            <div class="post-name">Rami Toumi</div>
+                            <div class="post-time">5 hours ago</div>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        Who wants to volunteer for our community center this Saturday? All skill levels welcome! 🙌
+                    </div>
+                    <div class="post-actions">
+                        <button class="post-action" onclick="likePost(this)">
+                            <span class="action-icon">❤️</span>
+                            <span class="action-count">24</span>
+                        </button>
+                        <button class="post-action">
+                            <span class="action-icon">💬</span>
+                            <span class="action-count">8</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="feed-post">
+                    <div class="post-header">
+                        <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=100" alt="Leila Ben Ahmed" class="post-avatar">
+                        <div class="post-info">
+                            <div class="post-name">Leila Ben Ahmed</div>
+                            <div class="post-time">1 day ago</div>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        Just finished organizing a book drive for local schools. We collected over 500 books! Thank you to everyone who contributed! 📚💙
+                    </div>
+                    <div class="post-actions">
+                        <button class="post-action" onclick="likePost(this)">
+                            <span class="action-icon">❤️</span>
+                            <span class="action-count">56</span>
+                        </button>
+                        <button class="post-action">
+                            <span class="action-icon">💬</span>
+                            <span class="action-count">15</span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="feed-post">
+                    <div class="post-header">
+                        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=100" alt="Karim Mansour" class="post-avatar">
+                        <div class="post-info">
+                            <div class="post-name">Karim Mansour</div>
+                            <div class="post-time">1 day ago</div>
+                        </div>
+                    </div>
+                    <div class="post-content">
+                        Looking for volunteers to help with our beach cleanup next weekend in La Marsa. Bring your friends and family! 🌊
+                    </div>
+                    <div class="post-actions">
+                        <button class="post-action" onclick="likePost(this)">
+                            <span class="action-icon">❤️</span>
+                            <span class="action-count">38</span>
+                        </button>
+                        <button class="post-action">
+                            <span class="action-icon">💬</span>
+                            <span class="action-count">12</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">💝 Success Stories</div>
+                <h2 class="section-title">Hear From Our Amazing Community</h2>
+                <p class="section-subtitle">
+                    Real stories from real people making real impact across Tunisia
+                </p>
+            </div>
+
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">
+                        Lumina helped me find my tribe! I've met incredible people and been part of projects I never knew existed in my city. It's truly life-changing.
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=100" alt="Sarah" class="author-avatar">
+                        <div class="author-info">
+                            <div class="author-name">Sarah Khaled</div>
+                            <div class="author-role">Volunteer • Tunis</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">
+                        As a project organizer, Lumina made it so easy to find passionate volunteers. Our beach cleanup brought together 50+ amazing people!
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=100" alt="Ahmed" class="author-avatar">
+                        <div class="author-info">
+                            <div class="author-name">Ahmed Boussetta</div>
+                            <div class="author-role">Initiative Leader • Sousse</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="quote-icon">"</div>
+                    <p class="testimonial-text">
+                        I love how welcoming and friendly everyone is. From day one, I felt like part of a family working towards something meaningful together.
+                    </p>
+                    <div class="testimonial-author">
+                        <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=100" alt="Nour" class="author-avatar">
+                        <div class="author-info">
+                            <div class="author-name">Nour Mahjoub</div>
+                            <div class="author-role">Active Member • Sfax</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">❓ Got Questions?</div>
+                <h2 class="section-title">We've Got Answers!</h2>
+                <p class="section-subtitle">
+                    Everything you need to know about joining our community
+                </p>
+            </div>
+
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>How do I get started with Lumina?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Getting started is super easy! Just browse our initiatives, find one that speaks to you, and click "Join Initiative." You'll be connected with the organizers and other volunteers right away. No complicated sign-up process!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Is Lumina really free to use?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely! Lumina is 100% free for everyone. We believe social impact should be accessible to all, so we'll never charge you to discover, join, or create initiatives. Our mission is to connect communities, not profit from them.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Can I start my own initiative?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Of course! We encourage it. If you have an idea for a community project, you can easily create your own initiative page, describe what you're trying to achieve, and start rallying volunteers. We'll provide tools and support to help you succeed!</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>What kind of initiatives can I find?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We have all kinds! From environmental cleanups and educational programs to cultural events and community support projects. Whether you're into arts, sports, education, or environmental work, there's something for everyone on Lumina.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Do I need any special skills to volunteer?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Not at all! While some initiatives might need specific skills, most are open to anyone with enthusiasm and a willingness to help. Every contribution matters, whether you're offering specialized skills or just your time and energy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-icon">🌟</span>
+                        <span class="logo-text">Lumina</span>
+                    </div>
+                    <p class="footer-tagline">
+                        Connecting communities, creating impact, one initiative at a time across Tunisia 💙
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">Twitter</a>
+                        <a href="#" class="social-link">LinkedIn</a>
+                    </div>
+                </div>
+
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Explore</h4>
+                        <a href="#initiatives">Initiatives</a>
+                        <a href="#events">Events</a>
+                        <a href="#community">Community</a>
+                        <a href="#">Success Stories</a>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Get Involved</h4>
+                        <a href="#">Volunteer</a>
+                        <a href="#">Start Initiative</a>
+                        <a href="#">Partner With Us</a>
+                        <a href="#">Donate</a>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Resources</h4>
+                        <a href="#">Help Center</a>
+                        <a href="#">Guidelines</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Contact Us</a>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <a href="#">Privacy Policy</a>
+                        <a href="#">Terms of Service</a>
+                        <a href="#">Cookie Policy</a>
+                        <a href="#">Accessibility</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2024 Lumina. Made with 💙 in Tunisia. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Post Modal -->
+    <div id="postModal" class="modal">
+        <div class="modal-overlay" onclick="closePostModal()"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Share with the Community 💬</h3>
+                <button class="modal-close" onclick="closePostModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <textarea 
+                    id="postContent" 
+                    placeholder="What's on your mind? Share your ideas, ask questions, or tell us about your latest initiative..." 
+                    rows="6"
+                    class="post-textarea"
+                ></textarea>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-cancel" onclick="closePostModal()">Cancel</button>
+                <button class="btn-submit" onclick="submitPost()">Post to Community 🚀</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
