@@ -163,6 +163,7 @@ ProjetMVC/
    ```bash
    git clone https://github.com/yourusername/lumina.git
    cd lumina
+
 Configure Server Environment
 
 Move the project files into C:\xampp\htdocs\ProjetMVC\
@@ -247,7 +248,7 @@ Phase 2: Real-time push notifications, mobile application (React Native), multi-
 
 Phase 3: Government social service API integrations, predictive need analytics, automated volunteer dispatch schedules.
 
-🤝 Contributing
+#🤝 Contributing
 Contributions are welcome! Please follow these steps:
 
 Fork the repository.
@@ -260,11 +261,7 @@ Push to the branch (git push origin feature/AmazingFeature).
 
 Open a Pull Request.
 
-📄 License
+#📄 License
 This project is licensed under the MIT License — see the LICENSE file for details.
-
 "Lighting the way to help, one connection at a time" ✨
 Built with ❤️ for Tunisia
-
-
-
