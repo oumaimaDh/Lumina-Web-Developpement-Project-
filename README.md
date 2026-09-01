@@ -1,109 +1,109 @@
-# Lumina 🌟
-> A Tunisian Social Platform Connecting People in Need with Local Associations and Volunteers
+Lumina 🌟
+A Tunisian Social Platform Connecting People in Need with Local Associations and Volunteers
 
-![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
-![PHP](https://img.shields.io/badge/PHP-8.2.12-purple)
-![MySQL](https://img.shields.io/badge/MySQL-Database-orange)
-![Architecture](https://img.shields.io/badge/Architecture-MVC-green)
+https://img.shields.io/badge/License-MIT-blue.svg
+https://img.shields.io/badge/PHP-8.2.12-purple
+https://img.shields.io/badge/MySQL-Database-orange
+https://img.shields.io/badge/Architecture-MVC-green
 
----
+📋 Table of Contents
+Overview
 
-## 📋 Table of Contents
-- [Overview](#-overview)
-- [Key Features](#-key-features)
-- [Team & Modules](#-team--modules)
-- [Screenshots](#-screenshots)
-- [Tech Stack](#-tech-stack)
-- [Project Structure](#-project-structure)
-- [Installation](#-installation)
-- [API Documentation](#-api-documentation)
-- [Design System](#-design-system)
-- [Development Guidelines](#-development-guidelines)
-- [Future Roadmap](#-future-roadmap)
-- [Contributing](#-contributing)
-- [License](#-license)
+Key Features
 
----
+Team & Modules
 
-## 🌟 Overview
+Screenshots
+
+Tech Stack
+
+Project Structure
+
+Installation
+
+API Documentation
+
+Design System
+
+Development Guidelines
+
+Future Roadmap
+
+Contributing
+
+License
+
+🌟 Overview
 Lumina is a social service platform in Tunisia designed to bridge the gap between individuals facing social difficulties and nearby associations or volunteers who can assist them within their region.
 
 When someone encounters a social problem — such as unemployment, poverty, or precarious living situations — they can complete an online form detailing their situation. The platform maps their location, displaying visual help points ("light points") representing nearby resources and support networks.
 
-### 🎯 Mission Statement
-> *"Acting as a bridge between those who need help and those who can offer it."*
+🎯 Mission Statement
+"Acting as a bridge between those who need help and those who can offer it."
 
----
+✨ Key Features
+🆘 For Those Seeking Help
 
-## ✨ Key Features
+Intuitive Case Submission Form: Easy-to-complete forms for various social issues.
 
-**🆘 For Those Seeking Help**
-* **Intuitive Case Submission Form:** Easy-to-complete forms for various social issues.
-* **Real-Time Location Mapping:** Visual representation of nearby available aid.
-* **Anonymous Options:** Privacy protections for sensitive situations.
-* **Multiple Assistance Categories:** Employment, social cases, events, and urgent aid.
+Real-Time Location Mapping: Visual representation of nearby available aid.
 
-**🤝 For Associations & Volunteers**
-* **Geographic Matching System:** Connect directly with individuals in your immediate area.
-* **Case Management Dashboard:** Track, update, and manage assistance requests.
-* **Volunteer Coordination:** Organize and delegate aid efforts efficiently.
-* **Impact Analytics:** Measure community contribution and reach.
+Anonymous Options: Privacy protections for sensitive situations.
 
-**🗺️ Core Platform Features**
-* **Interactive Map Interface:** Geographic representation of needs and local help points.
-* **Smart Matching System:** Proximity-based connection algorithm.
-* **Multi-Module Architecture:** Dedicated modules handling distinct social workflows.
-* **AI-Powered Chatbot:** 24/7 automated guidance and user support.
-* **Feedback & Reviews:** Continuous service quality tracking and complaint management.
+Multiple Assistance Categories: Employment, social cases, events, and urgent aid.
 
----
+🤝 For Associations & Volunteers
 
-## 👥 Team & Modules
+Geographic Matching System: Connect directly with individuals in your immediate area.
 
-### Development Team & Responsibilities
+Case Management Dashboard: Track, update, and manage assistance requests.
 
-| Team Member | Module | Responsibilities |
-| :--- | :--- | :--- |
-| **Oumaima** | User Module | User authentication, profiles, registration, login system, user management dashboard |
-| **Mariem** | Events Module | Event creation, calendar, volunteer coordination, event management |
-| **Menna** | Social Cases Department | Case submission forms, case management, priority assignment, case tracking |
-| **Nawress** | Jobs Department | Job listings, employment matching, employer profiles, job application system |
-| **Ilyess** | Complaints & Reviews + AI Chatbot | Feedback system, complaint tracking, review management, AI-powered assistance chatbot |
+Volunteer Coordination: Organize and delegate aid efforts efficiently.
 
-### Module Integration Points
-* **Shared Authentication:** All platform modules utilize Oumaima's core authentication architecture.
-* **Unified Location Services:** Geographic mapping utilities shared across all submission and response features.
-* **Central Notification System:** Unified cross-module communication and status alerts.
-* **Consistent Design Language:** Standardized styling, component structure, and dark-theme guidelines.
+Impact Analytics: Measure community contribution and reach.
 
----
+🗺️ Core Platform Features
 
-## 📸 Screenshots
+Interactive Map Interface: Geographic representation of needs and local help points.
 
-<img width="1850" height="905" alt="Screenshot 2025-12-14 122644" src="https://github.com/user-attachments/assets/644d7c61-8631-47c4-ba99-8f127fb5d72a" />
-<img width="1721" height="910" alt="Screenshot 2025-12-14 122656" src="https://github.com/user-attachments/assets/fb7c10d1-7501-4f5e-9c26-80921d20e415" />
-<img width="1818" height="901" alt="Screenshot 2025-12-14 122824" src="https://github.com/user-attachments/assets/7c35b1cf-3768-4fdd-a017-d2c51d609bc0" />
-<img width="1820" height="904" alt="Screenshot 2025-12-14 123236" src="https://github.com/user-attachments/assets/72c9e28c-c4d2-402b-9f3f-08abdc017cc3" />
-<img width="1831" height="909" alt="Screenshot 2025-12-14 123156" src="https://github.com/user-attachments/assets/9219b66e-9500-45a7-8c8a-924dc3c8609e" />
-<img width="1829" height="907" alt="Screenshot 2025-12-14 123215" src="https://github.com/user-attachments/assets/d01a77a2-373a-40ac-9e5c-669428d9a4c8" />
-<img width="1822" height="905" alt="Screenshot 2025-12-14 123226" src="https://github.com/user-attachments/assets/237181be-645b-4933-b0aa-819e05014e30" />
-<img width="1791" height="895" alt="Screenshot 2025-12-14 194233" src="https://github.com/user-attachments/assets/64322fd3-f24c-4e8b-a5f5-feb9571b875e" />
-<img width="1815" height="903" alt="Screenshot 2025-12-14 194222" src="https://github.com/user-attachments/assets/e215b7bd-64a3-4c4c-b00f-a639d3032bf1" />
+Smart Matching System: Proximity-based connection algorithm.
 
+Multi-Module Architecture: Dedicated modules handling distinct social workflows.
 
----
+AI-Powered Chatbot: 24/7 automated guidance and user support.
 
-## 🛠️ Tech Stack
+Feedback & Reviews: Continuous service quality tracking and complaint management.
 
-* **Backend:** PHP 8.2.12 (PDO, Custom MVC Framework)
-* **Database:** MySQL (Normalized schema, Geospatial query support)
-* **Frontend:** HTML5, CSS3 (Custom properties/variables), JavaScript (ES6+), Leaflet.js / Google Maps API
-* **Development Environment:** XAMPP, Apache
+👥 Team & Modules
+Development Team & Responsibilities
+Team Member	Module	Responsibilities
+Oumaima	User Module	User authentication, profiles, registration, login system, user management dashboard
+Mariem	Events Module	Event creation, calendar, volunteer coordination, event management
+Menna	Social Cases Department	Case submission forms, case management, priority assignment, case tracking
+Nawress	Jobs Department	Job listings, employment matching, employer profiles, job application system
+Ilyess	Complaints & Reviews + AI Chatbot	Feedback system, complaint tracking, review management, AI-powered assistance chatbot
+Module Integration Points
+Shared Authentication: All platform modules utilize Oumaima's core authentication architecture.
 
----
+Unified Location Services: Geographic mapping utilities shared across all submission and response features.
 
-## 📁 Project Structure
+Central Notification System: Unified cross-module communication and status alerts.
 
+Consistent Design Language: Standardized styling, component structure, and dark-theme guidelines.
+
+📸 Screenshots
+<img width="1850" height="905" alt="Screenshot 1" src="https://github.com/user-attachments/assets/644d7c61-8631-47c4-ba99-8f127fb5d72a" /> <img width="1721" height="910" alt="Screenshot 2" src="https://github.com/user-attachments/assets/fb7c10d1-7501-4f5e-9c26-80921d20e415" /> <img width="1818" height="901" alt="Screenshot 3" src="https://github.com/user-attachments/assets/7c35b1cf-3768-4fdd-a017-d2c51d609bc0" /> <img width="1820" height="904" alt="Screenshot 4" src="https://github.com/user-attachments/assets/72c9e28c-c4d2-402b-9f3f-08abdc017cc3" />
+🛠️ Tech Stack
+Backend: PHP 8.2.12 (PDO, Custom MVC Framework)
+
+Database: MySQL (Normalized schema, Geospatial query support)
+
+Frontend: HTML5, CSS3 (Custom properties/variables), JavaScript (ES6+), Leaflet.js / Google Maps API
+
+Development Environment: XAMPP, Apache
+
+📁 Project Structure
+text
 ProjetMVC/
 ├── app/
 │   ├── controllers/
@@ -149,21 +149,20 @@ ProjetMVC/
 ├── vendor/
 ├── .htaccess
 └── README.md
+🚀 Installation
+Prerequisites
+XAMPP (PHP 8.2.12+ and MySQL)
 
-## 🚀 Installation
+Composer
 
-### Prerequisites
-- XAMPP (PHP 8.2.12+ and MySQL)
-- Composer
-- Git
+Git
 
-### Step-by-Step Setup
+Step-by-Step Setup
+Clone the Repository
 
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/yourusername/lumina.git
-   cd lumina
-
+bash
+git clone https://github.com/yourusername/lumina.git
+cd lumina
 Configure Server Environment
 
 Move the project files into C:\xampp\htdocs\ProjetMVC\
@@ -248,7 +247,7 @@ Phase 2: Real-time push notifications, mobile application (React Native), multi-
 
 Phase 3: Government social service API integrations, predictive need analytics, automated volunteer dispatch schedules.
 
-#🤝 Contributing
+🤝 Contributing
 Contributions are welcome! Please follow these steps:
 
 Fork the repository.
@@ -261,7 +260,8 @@ Push to the branch (git push origin feature/AmazingFeature).
 
 Open a Pull Request.
 
-#📄 License
+📄 License
 This project is licensed under the MIT License — see the LICENSE file for details.
+
 "Lighting the way to help, one connection at a time" ✨
 Built with ❤️ for Tunisia
