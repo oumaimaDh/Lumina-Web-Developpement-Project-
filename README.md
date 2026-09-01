@@ -1,197 +1,110 @@
-Lumina 🌟
-A Tunisian Social Platform Connecting People in Need with Local Associations and Volunteers
+# Lumina 🌟
+> A Tunisian Social Platform Connecting People in Need with Local Associations and Volunteers
+
+![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)
+![PHP](https://img.shields.io/badge/PHP-8.2.12-purple)
+![MySQL](https://img.shields.io/badge/MySQL-Database-orange)
+![Architecture](https://img.shields.io/badge/Architecture-MVC-green)
 
-https://img.shields.io/badge/License-MIT-blue.svg
-https://img.shields.io/badge/PHP-8.2.12-purple
-https://img.shields.io/badge/MySQL-Database-orange
-https://img.shields.io/badge/Architecture-MVC-green
+---
 
-📋 Table of Contents
-Overview
+## 📋 Table of Contents
+- [Overview](#-overview)
+- [Key Features](#-key-features)
+- [Team & Modules](#-team--modules)
+- [Screenshots](#-screenshots)
+- [Tech Stack](#-tech-stack)
+- [Project Structure](#-project-structure)
+- [Installation](#-installation)
+- [API Documentation](#-api-documentation)
+- [Design System](#-design-system)
+- [Development Guidelines](#-development-guidelines)
+- [Future Roadmap](#-future-roadmap)
+- [Contributing](#-contributing)
+- [License](#-license)
 
-Features
+---
 
-Screenshots
+## 🌟 Overview
+Lumina is a social service platform in Tunisia designed to bridge the gap between individuals facing social difficulties and nearby associations or volunteers who can assist them within their region.
 
-Tech Stack
+When someone encounters a social problem — such as unemployment, poverty, or precarious living situations — they can complete an online form detailing their situation. The platform maps their location, displaying visual help points ("light points") representing nearby resources and support networks.
 
-Installation
+### 🎯 Mission Statement
+> *"Acting as a bridge between those who need help and those who can offer it."*
 
-Project Structure
+---
 
-Team & Modules
+## ✨ Key Features
 
-API Documentation
+**🆘 For Those Seeking Help**
+* **Intuitive Case Submission Form:** Easy-to-complete forms for various social issues.
+* **Real-Time Location Mapping:** Visual representation of nearby available aid.
+* **Anonymous Options:** Privacy protections for sensitive situations.
+* **Multiple Assistance Categories:** Employment, social cases, events, and urgent aid.
 
-Design System
+**🤝 For Associations & Volunteers**
+* **Geographic Matching System:** Connect directly with individuals in your immediate area.
+* **Case Management Dashboard:** Track, update, and manage assistance requests.
+* **Volunteer Coordination:** Organize and delegate aid efforts efficiently.
+* **Impact Analytics:** Measure community contribution and reach.
 
-Development
+**🗺️ Core Platform Features**
+* **Interactive Map Interface:** Geographic representation of needs and local help points.
+* **Smart Matching System:** Proximity-based connection algorithm.
+* **Multi-Module Architecture:** Dedicated modules handling distinct social workflows.
+* **AI-Powered Chatbot:** 24/7 automated guidance and user support.
+* **Feedback & Reviews:** Continuous service quality tracking and complaint management.
 
-Future Roadmap
+---
 
-Contributing
+## 👥 Team & Modules
 
-License
+### Development Team & Responsibilities
 
-🌟 Overview
-Lumina is a groundbreaking social service platform in Tunisia designed to bridge the gap between individuals facing social difficulties and the associations or volunteers who can assist them within their local region.
+| Team Member | Module | Responsibilities |
+| :--- | :--- | :--- |
+| **Oumaima** | User Module | User authentication, profiles, registration, login system, user management dashboard |
+| **Mariem** | Events Module | Event creation, calendar, volunteer coordination, event management |
+| **Menna** | Social Cases Department | Case submission forms, case management, priority assignment, case tracking |
+| **Nawress** | Jobs Department | Job listings, employment matching, employer profiles, job application system |
+| **Ilyess** | Complaints & Reviews + AI Chatbot | Feedback system, complaint tracking, review management, AI-powered assistance chatbot |
 
-When someone encounters a social problem — such as unemployment, poverty, or precarious living situations — they can complete an online form describing their situation. Once submitted, the platform displays their location on an interactive map, with glowing "light points" appearing around it to represent nearby associations or individuals available to help.
+### Module Integration Points
+* **Shared Authentication:** All platform modules utilize Oumaima's core authentication architecture.
+* **Unified Location Services:** Geographic mapping utilities shared across all submission and response features.
+* **Central Notification System:** Unified cross-module communication and status alerts.
+* **Consistent Design Language:** Standardized styling, component structure, and dark-theme guidelines.
 
-🎯 Mission Statement
-"Acting as a bridge between those who need help and those who can offer it."
+---
 
-✨ Key Features
-🆘 For Those Seeking Help
-Intuitive Case Submission Form – Easy-to-complete forms for various social issues
+## 📸 Screenshots
 
-Real-time Location Mapping – Visual representation of help availability
+<img width="1850" height="905" alt="Screenshot 2025-12-14 122644" src="https://github.com/user-attachments/assets/644d7c61-8631-47c4-ba99-8f127fb5d72a" />
+<img width="1721" height="910" alt="Screenshot 2025-12-14 122656" src="https://github.com/user-attachments/assets/fb7c10d1-7501-4f5e-9c26-80921d20e415" />
+<img width="1818" height="901" alt="Screenshot 2025-12-14 122824" src="https://github.com/user-attachments/assets/7c35b1cf-3768-4fdd-a017-d2c51d609bc0" />
+<img width="1820" height="904" alt="Screenshot 2025-12-14 123236" src="https://github.com/user-attachments/assets/72c9e28c-c4d2-402b-9f3f-08abdc017cc3" />
+<img width="1831" height="909" alt="Screenshot 2025-12-14 123156" src="https://github.com/user-attachments/assets/9219b66e-9500-45a7-8c8a-924dc3c8609e" />
+<img width="1829" height="907" alt="Screenshot 2025-12-14 123215" src="https://github.com/user-attachments/assets/d01a77a2-373a-40ac-9e5c-669428d9a4c8" />
+<img width="1822" height="905" alt="Screenshot 2025-12-14 123226" src="https://github.com/user-attachments/assets/237181be-645b-4933-b0aa-819e05014e30" />
+<img width="1791" height="895" alt="Screenshot 2025-12-14 194233" src="https://github.com/user-attachments/assets/64322fd3-f24c-4e8b-a5f5-feb9571b875e" />
+<img width="1815" height="903" alt="Screenshot 2025-12-14 194222" src="https://github.com/user-attachments/assets/e215b7bd-64a3-4c4c-b00f-a639d3032bf1" />
 
-Anonymous Options – Privacy protection for sensitive situations
 
-Multiple Assistance Categories – Employment, social cases, events, and more
+---
 
-🤝 For Associations & Volunteers
-Geographic Matching System – Connect with people in your immediate area
+## 🛠️ Tech Stack
 
-Case Management Dashboard – Track and manage assistance requests
+* **Backend:** PHP 8.2.12 (PDO, Custom MVC Framework)
+* **Database:** MySQL (Normalized schema, Geospatial query support)
+* **Frontend:** HTML5, CSS3 (Custom properties/variables), JavaScript (ES6+), Leaflet.js / Google Maps API
+* **Development Environment:** XAMPP, Apache
 
-Volunteer Coordination – Organize help efforts efficiently
+---
 
-Impact Analytics – Measure your community contribution
+## 📁 Project Structure
 
-🗺️ Platform Features
-Interactive Map Interface – Visual geographic representation of needs and resources
-
-Smart Matching Algorithm – Proximity-based connection system
-
-Multi-module Architecture – Specialized departments for different assistance types
-
-AI-Powered Chatbot – 24/7 guidance and support
-
-Feedback & Complaint System – Quality assurance and continuous improvement
-
-📸 Screenshots
-NOTE: Add screenshots here once your project is developed. Suggested screenshots:
-
-Landing Page – Showcasing the dark theme with purple accents
-
-Case Submission Form – The form interface
-
-Interactive Map – Displaying help requests and available assistance
-
-Dashboard Views – For both users and associations
-
-Mobile Responsive Views – Different device displays
-
-Example format for adding screenshots:
-
-text
-![Dashboard View](screenshots/dashboard.png)
-*Dashboard showing active cases and nearby help points*
-🛠️ Tech Stack
-Backend
-PHP 8.2.12 – Server-side scripting
-
-XAMPP – Development environment
-
-PDO (PHP Data Objects) – Secure database interactions
-
-MVC Architecture – Clean separation of concerns
-
-Frontend
-HTML5 – Semantic markup
-
-CSS3 with Custom Properties – Modern styling
-
-JavaScript (ES6+) – Interactive features
-
-Map Integration – For geographic visualization (consider Leaflet.js or Google Maps API)
-
-Database
-MySQL – Relational database management
-
-Normalized Schema – Efficient data organization
-
-Geospatial Queries – Location-based searches
-
-Architecture
-MVC Pattern – Model-View-Controller separation
-
-Modular Design – Independent feature modules
-
-RESTful Principles – API design approach
-
-🚀 Installation
-Prerequisites
-XAMPP (with PHP 8.2.12+ and MySQL)
-
-Composer (for PHP dependencies)
-
-Git
-
-Step-by-Step Setup
-Clone the Repository
-
-bash
-git clone https://github.com/yourusername/lumina.git
-cd lumina
-Configure XAMPP
-
-Place the project in C:\xampp\htdocs\ProjetMVC\
-
-Start Apache and MySQL from XAMPP Control Panel
-
-Database Setup
-
-sql
--- Create database
-CREATE DATABASE lumina_db;
-
--- Import the provided SQL file (will be in /database/schema.sql)
--- Or run the initialization script
-Configure Environment
-
-bash
-# Copy the environment configuration template
-cp config/env.example.php config/env.php
-
-# Edit config/env.php with your database credentials
-# Set database connection, API keys, and other configurations
-Install Dependencies (if any)
-
-bash
-# If using Composer packages
-composer install
-Access the Application
-
-Open browser and navigate to: http://localhost/ProjetMVC/
-
-Default admin credentials: (to be set during installation)
-
-Configuration File Example (config/env.php)
-php
-<?php
-// Database Configuration
-define('DB_HOST', 'localhost');
-define('DB_NAME', 'lumina_db');
-define('DB_USER', 'root');
-define('DB_PASS', '');
-
-// Application Configuration
-define('APP_URL', 'http://localhost/ProjetMVC/');
-define('APP_ENV', 'development'); // 'production' for live site
-
-// Map API Key (Google Maps or Leaflet)
-define('MAP_API_KEY', 'your_api_key_here');
-
-// Security
-define('ENCRYPTION_KEY', 'your_secure_key_here');
-?>
-📁 Project Structure
-text
 ProjetMVC/
-│
 ├── app/
 │   ├── controllers/
 │   │   ├── UserController.php
@@ -199,21 +112,18 @@ ProjetMVC/
 │   │   ├── JobController.php
 │   │   ├── EventController.php
 │   │   └── ComplaintController.php
-│   │
 │   ├── models/
 │   │   ├── User.php
 │   │   ├── SocialCase.php
 │   │   ├── Job.php
 │   │   ├── Event.php
 │   │   └── Complaint.php
-│   │
 │   └── views/
 │       ├── user/
 │       ├── social-case/
 │       ├── job/
 │       ├── event/
 │       └── complaint/
-│
 ├── public/
 │   ├── assets/
 │   │   ├── css/
@@ -225,256 +135,136 @@ ProjetMVC/
 │   │   │   ├── map.js
 │   │   │   └── form-validation.js
 │   │   └── images/
-│   │
 │   └── index.php
-│
 ├── config/
 │   ├── database.php
 │   └── env.php
-│
 ├── database/
 │   ├── schema.sql
 │   └── seed-data.sql
-│
 ├── helpers/
 │   ├── AuthHelper.php
 │   ├── MapHelper.php
 │   └── ValidationHelper.php
-│
-├── vendor/          # Composer dependencies
+├── vendor/
 ├── .htaccess
-├── README.md
-└── composer.json
-👥 Team & Modules
-Development Team & Responsibilities
-Team Member	Module	Responsibilities
-Oumaima	User Module	User authentication, profiles, registration, login system, user management dashboard
-Mariem	Events Module	Event creation, calendar, volunteer coordination, event management
-Menna	Social Cases Department	Case submission forms, case management, priority assignment, case tracking
-Nawress	Jobs Department	Job listings, employment matching, employer profiles, job application system
-Ilyess	Complaints & Reviews + AI Chatbot	Feedback system, complaint tracking, review management, AI-powered assistance chatbot
-Module Integration Points
-Shared Authentication – All modules use Oumaima's user system
+└── README.md
 
-Unified Location Services – Geographic features shared across modules
+## 🚀 Installation
 
-Central Notification System – Cross-module communication
+### Prerequisites
+- XAMPP (PHP 8.2.12+ and MySQL)
+- Composer
+- Git
 
-Consistent Design Language – Following the established design system
+### Step-by-Step Setup
 
+1. **Clone the Repository**
+   ```bash
+   git clone https://github.com/yourusername/lumina.git
+   cd lumina
+Configure Server Environment
+
+Move the project files into C:\xampp\htdocs\ProjetMVC\
+
+Start Apache and MySQL via the XAMPP Control Panel.
+
+Database Initialization
+
+sql
+CREATE DATABASE lumina_db;
+-- Import database/schema.sql into lumina_db using phpMyAdmin or MySQL CLI
+Environment Configuration
+
+bash
+cp config/env.example.php config/env.php
+Edit config/env.php with your database credentials:
+
+php
+<?php
+define('DB_HOST', 'localhost');
+define('DB_NAME', 'lumina_db');
+define('DB_USER', 'root');
+define('DB_PASS', '');
+
+define('APP_URL', 'http://localhost/ProjetMVC/');
+define('APP_ENV', 'development');
+
+define('MAP_API_KEY', 'your_api_key_here');
+define('ENCRYPTION_KEY', 'your_secure_key_here');
+Launch Application
+
+Navigate to http://localhost/ProjetMVC/ in your browser.
+
+📡 API Documentation
+Base URL: /api/v1/
+
+Module	Method	Endpoint	Description
+User	POST	/api/users/register	Register new account
+User	POST	/api/users/login	Authenticate user
+User	GET	/api/users/profile	Retrieve user profile
+Social Cases	POST	/api/cases	Submit new assistance request
+Social Cases	GET	/api/cases	List cases (with filter criteria)
+Social Cases	PUT	/api/cases/{id}/status	Update resolution status
+Location Services	GET	/api/map/help-points	Fetch nearby assistance coordinates
+AI Chatbot	POST	/api/chatbot/message	Dispatch message to AI assistant
 🎨 Design System
 Color Palette
 css
-/* Primary Colors */
+/* Base Backgrounds */
 --background-dark: #0f0f1a;
 --background-card: #1a1a2e;
+
+/* Brand Gradients & Primaries */
 --primary-purple: #8b6cf7;
 --primary-gradient: linear-gradient(135deg, #8b6cf7 0%, #6a4fbb 100%);
 
-/* Accent Colors */
+/* Accent Palette */
 --accent-blue: #4fc3f7;
 --accent-green: #4caf50;
 --accent-orange: #ff9800;
 --accent-red: #f44336;
 
-/* Text Colors */
+/* Typography Colors */
 --text-primary: #ffffff;
 --text-secondary: #b0b0c0;
 --text-muted: #8888a0;
-Typography
-Primary Font: Roboto (sans-serif)
-
-Headings Font: Poppins (semi-bold)
-
-Base Font Size: 16px
-
-Line Height: 1.6
-
-UI Components
-Cards: Rounded corners (8px), subtle shadows
-
-Buttons: Gradient backgrounds, smooth hover animations
-
-Forms: Glass-morphism effects, focused states
-
-Map Interface: Dark theme compatible, glowing points animation
-
-Animation Guidelines
-Hover Effects: 0.3s ease transitions
-
-Page Transitions: Fade-in effects
-
-Loading States: Skeleton screens with shimmer
-
-Success/Error States: Subtle animations with color cues
-
 🔧 Development Guidelines
-Coding Standards
-Follow PSR-12 coding standards for PHP
+Security Standards: Always use PDO prepared statements to prevent SQL injections. Sanitize output using htmlspecialchars() to protect against XSS attacks.
 
-Use meaningful variable and function names
+Architecture Rules: Maintain strict MVC isolation — model logic, controller processing, and view rendering should remain completely separate.
 
-Comment complex logic sections
+Git Workflow:
 
-Keep functions focused and single-responsibility
-
-Database Design Principles
-Use foreign key constraints for data integrity
-
-Implement proper indexing for frequently queried columns
-
-Normalize data where appropriate
-
-Include created_at and updated_at timestamps
-
-Security Measures
-SQL Injection Protection: Use PDO prepared statements exclusively
-
-XSS Prevention: Always escape output with htmlspecialchars()
-
-CSRF Protection: Implement tokens for form submissions
-
-Password Security: Use PHP's password_hash() and password_verify()
-
-Input Validation: Validate on both client and server side
-
-Git Workflow
 bash
-# Feature Branch Workflow
 git checkout -b feature/module-name
-# Make changes
-git add .
-git commit -m "Add: Description of changes"
+git commit -m "Add: Concise description of feature"
 git push origin feature/module-name
-# Create Pull Request for review
-📡 API Documentation
-Base URL: /api/v1/
-Endpoints
-User Module
-http
-POST   /api/users/register     # Register new user
-POST   /api/users/login        # User authentication
-GET    /api/users/profile      # Get user profile
-PUT    /api/users/profile      # Update profile
-Social Cases Module
-http
-POST   /api/cases              # Submit new case
-GET    /api/cases              # List cases (with filters)
-GET    /api/cases/{id}         # Get specific case
-PUT    /api/cases/{id}/status  # Update case status
-Map & Location Services
-http
-GET    /api/map/help-points    # Get nearby help points
-POST   /api/map/geocode        # Convert address to coordinates
-GET    /api/map/heatmap        # Get needs density data
-AI Chatbot
-http
-POST   /api/chatbot/message    # Send message to AI assistant
-GET    /api/chatbot/context    # Get conversation context
 🗺️ Future Roadmap
-Phase 1: MVP (Current)
-User authentication system
+Phase 1 (MVP): Auth architecture, case submission lifecycle, interactive map display, and core module integration.
 
-Basic case submission and viewing
+Phase 2: Real-time push notifications, mobile application (React Native), multi-language localization (Arabic/French).
 
-Interactive map with static help points
-
-Module separation and basic integration
-
-Phase 2: Enhanced Features
-Real-time notifications
-
-Advanced matching algorithm
-
-Mobile application (React Native)
-
-SMS integration for low-connectivity users
-
-Multi-language support (Arabic/French)
-
-Phase 3: Advanced Integration
-Government API integration (social services)
-
-AI-powered need prediction
-
-Volunteer scheduling system
-
-Impact reporting dashboard
-
-Blockchain for transparent aid tracking
-
-Phase 4: Scale & Expansion
-Expand to other Maghreb countries
-
-Partnership portal for corporations
-
-Advanced analytics for policymakers
-
-Mobile payment integration for donations
+Phase 3: Government social service API integrations, predictive need analytics, automated volunteer dispatch schedules.
 
 🤝 Contributing
-We welcome contributions to make Lumina more effective in connecting people with help!
+Contributions are welcome! Please follow these steps:
 
-How to Contribute
-Fork the repository
+Fork the repository.
 
-Create a feature branch (git checkout -b feature/AmazingFeature)
+Create a feature branch (git checkout -b feature/AmazingFeature).
 
-Commit your changes (git commit -m 'Add some AmazingFeature')
+Commit your changes (git commit -m 'Add AmazingFeature').
 
-Push to the branch (git push origin feature/AmazingFeature)
+Push to the branch (git push origin feature/AmazingFeature).
 
-Open a Pull Request
-
-Development Setup for Contributors
-bash
-# 1. Fork and clone
-git clone https://github.com/YOUR_USERNAME/lumina.git
-
-# 2. Set up development environment
-# Follow installation steps above
-
-# 3. Create a new branch
-git checkout -b feature/your-feature-name
-
-# 4. Make your changes and test thoroughly
-
-# 5. Submit pull request
-Coding Standards
-Write clear, commented code
-
-Update documentation as needed
-
-Add tests for new features
-
-Ensure mobile responsiveness
-
-Follow the established design system
+Open a Pull Request.
 
 📄 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License — see the LICENSE file for details.
 
-🙏 Acknowledgments
-The Tunisian volunteer community for inspiration
-
-Open-source mapping libraries that make this project possible
-
-All contributors who believe in using technology for social good
-
-The development team for their dedication to creating positive impact
-
-📞 Support & Contact
-For support, questions, or partnership inquiries:
-
-Project Lead: [Your Name/Contact]
-
-Technical Issues: Create an issue in the GitHub repository
-
-General Inquiries: [Your Email]
-
-<div align="center">
 "Lighting the way to help, one connection at a time" ✨
-
 Built with ❤️ for Tunisia
 
-</div>
+
+
